@@ -1,2 +1,6 @@
-# The-CodeBook-Project
-Repository for the ASP.NET Web Forms Teamwork Project
+# <center> The CodeBook Project <center> #
+
+---
+
+### <center> Where the IT business and programmers meet <center> ###
+
