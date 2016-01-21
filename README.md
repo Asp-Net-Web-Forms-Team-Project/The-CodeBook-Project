@@ -1,6 +1,6 @@
-# <center> The CodeBook Project <center> #
+# The CodeBook Project #
 
 ---
 
-### <center> Where the IT business and programmers meet buu <center>###
+### Where the IT business and programmers meet ###
 
