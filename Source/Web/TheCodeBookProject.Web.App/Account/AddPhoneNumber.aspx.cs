@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using System.Threading.Tasks;
-using TheCodeBookProject.Web.App.Models;
-
 namespace TheCodeBookProject.Web.App.Account
 {
-    public partial class AddPhoneNumber : System.Web.UI.Page
+    using System.Web;
+    using System.Web.UI;
+
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+
+    public partial class AddPhoneNumber : Page
     {
         protected void PhoneNumber_Click(object sender, EventArgs e)
         {

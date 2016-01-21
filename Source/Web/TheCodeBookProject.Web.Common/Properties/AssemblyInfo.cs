@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TheCodeBookProject.Services.Data")]
+[assembly: AssemblyTitle("TheCodeBookProject.Web.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TheCodeBookProject.Services.Data")]
+[assembly: AssemblyProduct("TheCodeBookProject.Web.Common")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4ee46989-5271-452f-ab58-6801a3e52251")]
+[assembly: Guid("d1192583-fa30-4c13-9feb-d7ed7c8c991b")]
 
 // Version information for an assembly consists of the following four values:
 //

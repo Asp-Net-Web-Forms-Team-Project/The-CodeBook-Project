@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheCodeBookProject.Services
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheCodeBookProject.Web.App", "Web\TheCodeBookProject.Web.App\TheCodeBookProject.Web.App.csproj", "{9679FDD4-7CDC-47DD-B260-35CD6DE1D9D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheCodeBookProject.Web.Common", "Web\TheCodeBookProject.Web.Common\TheCodeBookProject.Web.Common.csproj", "{D1192583-FA30-4C13-9FEB-D7ED7C8C991B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9679FDD4-7CDC-47DD-B260-35CD6DE1D9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9679FDD4-7CDC-47DD-B260-35CD6DE1D9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9679FDD4-7CDC-47DD-B260-35CD6DE1D9D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1192583-FA30-4C13-9FEB-D7ED7C8C991B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1192583-FA30-4C13-9FEB-D7ED7C8C991B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1192583-FA30-4C13-9FEB-D7ED7C8C991B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1192583-FA30-4C13-9FEB-D7ED7C8C991B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +54,6 @@ Global
 		{99285E5C-BE4C-49BF-9BA8-523492CB3A78} = {CB5A5AAB-2DA1-4D8B-9660-D93D752A9F8A}
 		{4EE46989-5271-452F-AB58-6801A3E52251} = {EEEE57BC-BEC6-4A95-B3F2-AF700FAA91B2}
 		{9679FDD4-7CDC-47DD-B260-35CD6DE1D9D6} = {8BE54D9B-EF07-4DC6-B128-96C726913867}
+		{D1192583-FA30-4C13-9FEB-D7ED7C8C991B} = {8BE54D9B-EF07-4DC6-B128-96C726913867}
 	EndGlobalSection
 EndGlobal

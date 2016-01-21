@@ -371,7 +371,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -398,6 +397,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\TheCodeBookProject.Data.Models\TheCodeBookProject.Data.Models.csproj">
+      <Project>{99285e5c-be4c-49bf-9ba8-523492cb3a78}</Project>
+      <Name>TheCodeBookProject.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\TheCodeBookProject.Data\TheCodeBookProject.Data.csproj">
+      <Project>{7c667da9-0f98-47ca-89b2-72aedfe7665d}</Project>
+      <Name>TheCodeBookProject.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheCodeBookProject.Web.Common\TheCodeBookProject.Web.Common.csproj">
+      <Project>{d1192583-fa30-4c13-9feb-d7ed7c8c991b}</Project>
+      <Name>TheCodeBookProject.Web.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,7 +5,8 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using TheCodeBookProject.Web.App.Models;
+using TheCodeBookProject.Data.Models;
+using TheCodeBookProject.Web.Common.Identity;
 
 namespace TheCodeBookProject.Web.App.Account
 {
@@ -15,7 +16,7 @@ namespace TheCodeBookProject.Web.App.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
+            var user = new User() { UserName = Email.Text, Email = Email.Text };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
