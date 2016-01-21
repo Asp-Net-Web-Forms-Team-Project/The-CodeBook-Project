@@ -1,5 +1,7 @@
 ﻿namespace TheCodeBookProject.Data
 {
+    using System.Data.Entity;
+
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
@@ -11,6 +13,10 @@
             : base(DbConnectionName, throwIfV1Schema: false)
         {
         }
+
+        public IDbSet<Company> Companies { get; set; }
+
+        public IDbSet<Project> Projects { get; set; }
 
         public static TheCodeBookProjectDbContext Create()
         {
