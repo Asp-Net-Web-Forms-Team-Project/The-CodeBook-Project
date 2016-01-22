@@ -16,12 +16,6 @@
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" Path="~/Scripts/jquery-1.10.2.min.js"/>
-                <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -31,10 +25,14 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" Path="~/Scripts/jquery-1.10.2.min.js"/>
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Path="~/Scripts/bootstrap.js" />
                 <asp:ScriptReference Path="~/Scripts/material.js" />
+                <asp:ScriptReference Path="~/Scripts/material-init.js" />
                 <asp:ScriptReference Path="~/Scripts/ripples.js" />
-                <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
         <div class="navbar navbar-default navbar-fixed-top">

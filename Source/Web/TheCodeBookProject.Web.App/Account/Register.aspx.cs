@@ -9,6 +9,7 @@
     using Data.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.AspNet.Identity.EntityFramework;
 
     public partial class Register : Page
     {
@@ -36,6 +37,11 @@
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
+        }
+
+        protected void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Response.Redirect("/");
         }
     }
 }
