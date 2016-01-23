@@ -48,12 +48,14 @@
 
         public Company MyCompany { get; set; }
 
+        [MaxLength(100)]
+        public string ImageUrl { get; set; }
+
         public ICollection<Project> Projects
         {
             get { return this.projects; }
             set { this.projects = value; }
         }
-
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {
