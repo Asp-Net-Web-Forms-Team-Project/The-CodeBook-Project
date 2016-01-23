@@ -17,7 +17,7 @@
                 LastName = GetStringItem(LastNames),
                 Knowledge = GetStringItem(Knowledge) + ", " + GetStringItem(Knowledge),
                 Skills = GetStringItem(Skills) + ", " + GetStringItem(Skills),
-                Age = rnd.Next(10, 101),
+                Age = rnd.Next(20, 100),
                 ImageUrl = "~/Images/default.jpg"
             };
 

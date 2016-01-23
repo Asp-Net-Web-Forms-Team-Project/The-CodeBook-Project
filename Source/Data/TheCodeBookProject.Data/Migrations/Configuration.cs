@@ -5,7 +5,7 @@ namespace TheCodeBookProject.Data.Migrations
     using Models;
     using Microsoft.AspNet.Identity;
     using SeedUsersHelper;
-
+    using System;
     public class Configuration : DbMigrationsConfiguration<TheCodeBookProjectDbContext>
     {
         public Configuration()
@@ -71,7 +71,12 @@ namespace TheCodeBookProject.Data.Migrations
                 {
                     var user = userUtils.GetUser();
                     user.UserName += i;
-                    userManager.Create(user, password);
+                    var idRes = userManager.Create(user, password);
+                    if (idRes.Errors != null)
+                    {
+                        continue;
+                    }
+
                     User dbUser = userManager.FindByName(user.UserName);
                     if (i % 2 == 0)
                     {
