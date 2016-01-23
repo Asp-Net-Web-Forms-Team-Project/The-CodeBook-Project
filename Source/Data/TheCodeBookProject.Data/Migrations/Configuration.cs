@@ -4,14 +4,14 @@ namespace TheCodeBookProject.Data.Migrations
     using System.Data.Entity.Migrations;
     using Models;
     using Microsoft.AspNet.Identity;
-    using System.Linq;
-    using System.Data.Entity;
-
+    using SeedUsersHelper;
+    using System;
     public class Configuration : DbMigrationsConfiguration<TheCodeBookProjectDbContext>
     {
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(TheCodeBookProjectDbContext context)
@@ -20,37 +20,76 @@ namespace TheCodeBookProject.Data.Migrations
             var userStore = new UserStore<User>(context);
             var roleManager = new RoleManager<IdentityRole>(roleStore);
             var userManager = new UserManager<User>(userStore);
+            var adminUsername = "admin";
 
-            string adminRoleName = "admin";
-            if (!roleManager.RoleExists(adminRoleName))
+            if (userManager.FindByName(adminUsername) == null)
             {
+                string adminRoleName = "admin";
+                string developerRoleName = "developer";
+                string businessRoleName = "businessman";
+
                 var adminRole = new IdentityRole
                 {
                     Name = adminRoleName
                 };
 
-                roleManager.Create(adminRole);
-            }
+                var developerRole = new IdentityRole
+                {
+                    Name = developerRoleName
+                };
 
-            var admin = new User
-            {
-                FirstName = "Administrator",
-                LastName = "Administrator",
-                UserName = "admin",
-                Email = "admin@codebook.com",
-                Age = 25,
-                AboutMe = "The administrator of the web app",
-            };
-            
-            if(userManager.FindByName(admin.UserName) == null)
-            {
-                string adminPassword = "123456";
-                IdentityResult result = userManager.Create(admin, adminPassword);
+                var businessRole = new IdentityRole
+                {
+                    Name = businessRoleName
+                };
+
+
+                roleManager.Create(adminRole);
+                roleManager.Create(developerRole);
+                roleManager.Create(businessRole);
+
+                var admin = new User
+                {
+                    FirstName = "Administrator",
+                    LastName = "Administrator",
+                    UserName = adminUsername,
+                    Email = "admin@codebook.com",
+                    Age = 25,
+                    AboutMe = "The administrator of the web app",
+                    ImageUrl = "~/Images/default.jpg"
+                };
+
+
+                string password = "123456";
+                IdentityResult result = userManager.Create(admin, password);
                 User dbAdmin = userManager.FindByName(admin.UserName);
                 userManager.AddToRole(dbAdmin.Id, adminRoleName);
-            }
 
-            context.SaveChanges();
+                var userUtils = new SeedingUsersUtils();
+
+                for (int i = 0; i < 20; i++)
+                {
+                    var user = userUtils.GetUser();
+                    user.UserName += i;
+                    var idRes = userManager.Create(user, password);
+                    if (idRes.Errors != null)
+                    {
+                        continue;
+                    }
+
+                    User dbUser = userManager.FindByName(user.UserName);
+                    if (i % 2 == 0)
+                    {
+                        userManager.AddToRole(dbUser.Id, developerRoleName);
+                    }
+                    else
+                    {
+                        userManager.AddToRole(dbUser.Id, businessRoleName);
+                    }
+                }
+
+                context.SaveChanges();
+            }
         }
     }
 }
