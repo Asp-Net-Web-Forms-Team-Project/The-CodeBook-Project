@@ -18,6 +18,8 @@
 
         public IDbSet<Project> Projects { get; set; }
 
+        public IDbSet<Application> Applications { get; set; }
+
         public static TheCodeBookProjectDbContext Create()
         {
             return new TheCodeBookProjectDbContext();
@@ -26,7 +28,8 @@
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(100);
+
+            modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(value: 50);
         }
     }
 }

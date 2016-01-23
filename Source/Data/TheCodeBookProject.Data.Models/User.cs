@@ -11,11 +11,13 @@
     public class User : IdentityUser
     {
         private ICollection<Project> projects;
+        private ICollection<Application> applications;
 
         public User()
             : base()
         {
             this.projects = new HashSet<Project>();
+            this.applications = new HashSet<Application>();
         }
 
         [Required]
@@ -36,10 +38,6 @@
         [MaxLength(300)]
         public string AboutMe { get; set; }
 
-        public int ProjectsCurrent { get; set; }
-
-        public int ProjectsCompleted { get; set; }
-
         [MaxLength(100)]
         public string Knowledge { get; set; }
 
@@ -50,6 +48,12 @@
 
         [MaxLength(100)]
         public string ImageUrl { get; set; }
+
+        public ICollection<Application> Applications
+        {
+            get { return this.applications; }
+            set { this.applications = value; }
+        }
 
         public ICollection<Project> Projects
         {

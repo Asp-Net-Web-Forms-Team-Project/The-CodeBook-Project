@@ -7,10 +7,12 @@
     public class Project
     {
         private ICollection<User> developers;
+        private ICollection<Application> applications;
 
         public Project()
         {
             this.developers = new HashSet<User>();
+            this.applications = new HashSet<Application>();
         }
 
         [Key]
@@ -25,6 +27,14 @@
         public string Description { get; set; }
 
         public Company Organizer { get; set; }
+
+        public ProjectStatus Status { get; set; }
+
+        public ICollection<Application> Applications
+        {
+            get { return this.applications; }
+            set { this.applications = value; }
+        }
 
         public ICollection<User> Developers
         {
@@ -43,6 +53,6 @@
         public string SkillsRequired { get; set; }
 
         [Column(TypeName = "Money")]
-        public decimal AverageSalaryPerDeveloper { get; set; }
+        public decimal AverageMonetaryAwardPerDeveloper { get; set; }
     }
 }
