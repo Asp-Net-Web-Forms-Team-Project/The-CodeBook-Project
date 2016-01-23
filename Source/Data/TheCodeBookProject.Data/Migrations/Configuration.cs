@@ -11,7 +11,6 @@ namespace TheCodeBookProject.Data.Migrations
 
         protected override void Seed(TheCodeBookProjectDbContext context)
         {
-            
         }
     }
 }
