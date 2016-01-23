@@ -1,11 +1,13 @@
 namespace TheCodeBookProject.Data.Migrations
 {
-    using Microsoft.AspNet.Identity.EntityFramework;
-    using System.Data.Entity.Migrations;
-    using Models;
-    using Microsoft.AspNet.Identity;
-    using SeedUsersHelper;
     using System;
+    using System.Data.Entity.Migrations;
+
+    using Helpers;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
+
     public class Configuration : DbMigrationsConfiguration<TheCodeBookProjectDbContext>
     {
         public Configuration()
@@ -20,7 +22,7 @@ namespace TheCodeBookProject.Data.Migrations
             var userStore = new UserStore<User>(context);
             var roleManager = new RoleManager<IdentityRole>(roleStore);
             var userManager = new UserManager<User>(userStore);
-            var adminUsername = "admin";
+            string adminUsername = "admin";
 
             if (userManager.FindByName(adminUsername) == null)
             {
@@ -54,37 +56,36 @@ namespace TheCodeBookProject.Data.Migrations
                     LastName = "Administrator",
                     UserName = adminUsername,
                     Email = "admin@codebook.com",
-                    Age = 25,
+                    DateOfBirth = new DateTime(),
                     AboutMe = "The administrator of the web app",
                     ImageUrl = "~/Images/default.jpg"
                 };
-
-
+                
                 string password = "123456";
-                IdentityResult result = userManager.Create(admin, password);
+                IdentityResult adminIdentityResult = userManager.Create(admin, password);
                 User dbAdmin = userManager.FindByName(admin.UserName);
                 userManager.AddToRole(dbAdmin.Id, adminRoleName);
 
-                var userUtils = new SeedingUsersUtils();
+                var userUtils = new UsersSeedHelper();
 
                 for (int i = 0; i < 20; i++)
                 {
-                    var user = userUtils.GetUser();
+                    User user = userUtils.GetUser();
                     user.UserName += i;
-                    var idRes = userManager.Create(user, password);
-                    if (idRes.Errors != null)
-                    {
-                        continue;
-                    }
 
-                    User dbUser = userManager.FindByName(user.UserName);
-                    if (i % 2 == 0)
+                    IdentityResult identityResult = userManager.Create(user, password);
+                    if (identityResult.Succeeded)
                     {
-                        userManager.AddToRole(dbUser.Id, developerRoleName);
-                    }
-                    else
-                    {
-                        userManager.AddToRole(dbUser.Id, businessRoleName);
+                        User dbUser = userManager.FindByName(user.UserName);
+
+                        if (i % 2 == 0)
+                        {
+                            userManager.AddToRole(dbUser.Id, developerRoleName);
+                        }
+                        else
+                        {
+                            userManager.AddToRole(dbUser.Id, businessRoleName);
+                        }
                     }
                 }
 

@@ -7,12 +7,12 @@
     public class Project
     {
         private ICollection<User> developers;
-        private ICollection<Application> applications;
+        private ICollection<ProjectNotification> projectNotifications;
 
         public Project()
         {
             this.developers = new HashSet<User>();
-            this.applications = new HashSet<Application>();
+            this.projectNotifications = new HashSet<ProjectNotification>();
         }
 
         [Key]
@@ -26,22 +26,12 @@
         [MaxLength(300)]
         public string Description { get; set; }
 
-        public Company Organizer { get; set; }
+        public int OrganizerId { get; set; }
+
+        public virtual Company Organizer { get; set; }
 
         public ProjectStatus Status { get; set; }
-
-        public ICollection<Application> Applications
-        {
-            get { return this.applications; }
-            set { this.applications = value; }
-        }
-
-        public ICollection<User> Developers
-        {
-            get { return this.developers; }
-            set { this.developers = value; }
-        }
-
+        
         public int DevelopersNeeded { get; set; }
 
         [Required]
@@ -54,5 +44,17 @@
 
         [Column(TypeName = "Money")]
         public decimal AverageMonetaryAwardPerDeveloper { get; set; }
+
+        public virtual ICollection<ProjectNotification> ProjectNotifications
+        {
+            get { return this.projectNotifications; }
+            set { this.projectNotifications = value; }
+        }
+
+        public virtual ICollection<User> Developers
+        {
+            get { return this.developers; }
+            set { this.developers = value; }
+        }
     }
 }

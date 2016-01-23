@@ -1,6 +1,6 @@
 ﻿namespace TheCodeBookProject.Data.Models
 {
-    public enum ApplicatonStatus
+    public enum ProjectNotificationStatus
     {
         Pending = 0,
         Accepted = 1,

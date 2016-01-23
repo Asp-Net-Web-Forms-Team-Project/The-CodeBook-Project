@@ -1,6 +1,7 @@
 ﻿namespace TheCodeBookProject.Data
 {
     using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
 
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
@@ -18,7 +19,7 @@
 
         public IDbSet<Project> Projects { get; set; }
 
-        public IDbSet<Application> Applications { get; set; }
+        public IDbSet<ProjectNotification> Applications { get; set; }
 
         public static TheCodeBookProjectDbContext Create()
         {
@@ -30,6 +31,7 @@
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(value: 50);
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
         }
     }
 }

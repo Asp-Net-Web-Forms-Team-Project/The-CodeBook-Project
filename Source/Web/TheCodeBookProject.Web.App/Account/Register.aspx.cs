@@ -23,7 +23,7 @@
                 LastName = this.LastName.Text,
                 UserName = this.UserName.Text,
                 Email = this.Email.Text,
-                Age = Convert.ToInt32(this.Age.Text),
+                DateOfBirth = new DateTime(),
                 AboutMe = this.AboutMe.Text
             };
 

@@ -1,7 +1,9 @@
 ﻿namespace TheCodeBookProject.Data.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Threading.Tasks;
     using System.Security.Claims;
 
@@ -11,13 +13,13 @@
     public class User : IdentityUser
     {
         private ICollection<Project> projects;
-        private ICollection<Application> applications;
+        private ICollection<ProjectNotification> projectNotificatons;
 
         public User()
             : base()
         {
             this.projects = new HashSet<Project>();
-            this.applications = new HashSet<Application>();
+            this.projectNotificatons = new HashSet<ProjectNotification>();
         }
 
         [Required]
@@ -28,8 +30,8 @@
         [MaxLength(30)]
         public string LastName { get; set; }
 
-        [Range(10, 100)]
-        public int Age { get; set; }
+        [Column(TypeName = "Date")]
+        public DateTime DateOfBirth { get; set; }
 
         public int Rating { get; set; }
 
@@ -44,18 +46,20 @@
         [MaxLength(100)]
         public string Skills { get; set; }
 
-        public Company MyCompany { get; set; }
+        public int? MyCompanyId { get; set; }
+
+        public virtual Company MyCompany { get; set; }
 
         [MaxLength(100)]
         public string ImageUrl { get; set; }
 
-        public ICollection<Application> Applications
+        public virtual ICollection<ProjectNotification> ProjectNotifications
         {
-            get { return this.applications; }
-            set { this.applications = value; }
+            get { return this.projectNotificatons; }
+            set { this.projectNotificatons = value; }
         }
 
-        public ICollection<Project> Projects
+        public virtual ICollection<Project> Projects
         {
             get { return this.projects; }
             set { this.projects = value; }

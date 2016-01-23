@@ -59,7 +59,7 @@
   <ItemGroup>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SeedUsersHelper\SeedingUsersUtils.cs" />
+    <Compile Include="Helpers\UsersSeedHelper.cs" />
     <Compile Include="TheCodeBookProjectDbContext.cs" />
   </ItemGroup>
   <ItemGroup>

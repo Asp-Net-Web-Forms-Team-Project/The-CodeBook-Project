@@ -52,14 +52,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Age" CssClass="col-md-2 control-label">Age</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Age" CssClass="form-control" TextMode="Number" placeholder="Age" min="10" max="100" required="required" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Age"
-                                CssClass="text-danger" ErrorMessage="The age field is required." />
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="UserStatus" CssClass="col-md-2 control-label">Status</asp:Label>
                         <div class="col-md-10">
                             <asp:RadioButtonList runat="server" ID="UserStatus">
