@@ -26,7 +26,7 @@
         [MaxLength(30)]
         public string LastName { get; set; }
 
-        [Range(14, 100)]
+        [Range(10, 100)]
         public int Age { get; set; }
 
         public int Rating { get; set; }
