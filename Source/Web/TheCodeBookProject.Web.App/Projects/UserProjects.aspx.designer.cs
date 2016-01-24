@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TheCodeBookProject.Web.App
+namespace TheCodeBookProject.Web.App.Projects
 {
 
 
-    public partial class _Default
+    public partial class UserProjects
     {
     }
 }

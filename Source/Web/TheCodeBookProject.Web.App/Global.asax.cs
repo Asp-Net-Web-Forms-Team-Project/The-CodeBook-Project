@@ -13,5 +13,16 @@
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             DatabaseConfig.Initialize();
         }
+
+        void Application_Error()
+        {
+            Exception error = this.Server.GetLastError();
+            if (error is HttpException)
+            {
+                this.Response.Redirect("~/ErrorPages/NotFound.aspx");
+            }
+
+            this.Server.ClearError();
+        }
     }
 }

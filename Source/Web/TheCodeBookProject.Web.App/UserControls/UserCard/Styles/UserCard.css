@@ -1,0 +1,52 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+
+.user-card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    text-align: center;
+    border: 1px solid #009688;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #000;
+}
+
+    .user-card .card-title {
+        margin: 1px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        border-top: 2px solid #009688;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        padding-bottom: 10px;
+        color: white;
+        background-color: #009688;
+        margin-bottom: 15px;
+    }
+
+    .user-card img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .user-card .card-text {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'Handlee', cursive;
+        font-size: 20px;
+    }
+
+    .user-card .card-subtitle {
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #009688;
+        width: 260px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }

@@ -1,9 +1,15 @@
-﻿<%@ Page Title="Manage Account" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="TheCodeBookProject.Web.App.Account.Manage" %>
+﻿<%@ Page 
+    Title="My Profile" 
+    Language="C#" 
+    MasterPageFile="~/Site.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="Profile.aspx.cs" 
+    Inherits="TheCodeBookProject.Web.App.Account.Manage" %>
 
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+    <h2><%:this.Title %>.</h2>
 
     <div>
         <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">

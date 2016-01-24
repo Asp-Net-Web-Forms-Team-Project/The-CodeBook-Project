@@ -1,16 +1,22 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TheCodeBookProject.Web.App.SiteMaster" %>
+﻿<%@ Master Language="C#"
+    AutoEventWireup="true"
+    CodeBehind="Site.master.cs"
+    Inherits="TheCodeBookProject.Web.App.SiteMaster" %>
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: this.Page.Title %></title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-material-design.min.css" rel="stylesheet" />
     <link href="Content/ripples.min.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
+    <link href="UserControls/UserCard/Styles/UserCard.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -26,7 +32,7 @@
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" Path="~/Scripts/jquery-1.10.2.min.js"/>
+                <asp:ScriptReference Name="jquery" Path="~/Scripts/jquery-1.10.2.min.js" />
                 <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Path="~/Scripts/bootstrap.js" />
@@ -35,6 +41,7 @@
                 <asp:ScriptReference Path="~/Scripts/ripples.js" />
             </Scripts>
         </asp:ScriptManager>
+
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -43,14 +50,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/Home"><i class="material-icons md-30">developer_mode</i> The CodeBook Project</a>
                 </div>
                 <div class="navbar-collapse collapse navbar-responsive-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
+                    <asp:Menu
+                        ID="NavigationMenu"
+                        runat="server"
+                        CssClass="navbar-collapse collapse navbar-responsive-collapse"
+                        EnableViewState="False"
+                        IncludeStyleBlock="false"
+                        Orientation="Horizontal"
+                        DataSourceID="SiteMapDataSource"
+                        StaticDisplayLevels="2"
+                        OnMenuItemDataBound="NavigationMenu_MenuItemDataBound">
+                    </asp:Menu>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
@@ -60,9 +73,12 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <a runat="server" href="~/Account/Profile" title="Manage your account">Welcome, <strong><%:this.Context.User.Identity.GetUserName()%></strong>!
+                                    </a>
+                                </li>
+                                <li>
+                                    <asp:LoginStatus style="padding:0" runat="server" LogoutAction="Redirect" LogoutText="<i style='margin-top:18px;margin-right:10px' class='material-icons md-24'>power_settings_new</i>" LogoutPageUrl="~/Home" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
@@ -78,6 +94,38 @@
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>
         </div>
+        <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
     </form>
+    <script>
+        'use strict';
+        $(".navbar-collapse.collapse.navbar-responsive-collapse").removeAttr("style");
+        $(".navbar-collapse.collapse.navbar-responsive-collapse").removeAttr("style");
+        $("ul.level1")
+            .removeAttr("style")
+            .addClass("nav navbar-nav");
+
+        var dropdown = $("ul.level3")
+            .removeAttr("style")
+            .addClass("dropdown-menu");
+        dropdown
+            .parent()
+            .removeAttr("style");
+        dropdown
+            .children()
+            .removeAttr("style")
+            .removeAttr("class")
+            .removeAttr("role")
+            .attr("style", "display:block!important;width:100%!important;")
+            .children()
+            .removeAttr("style")
+            .removeAttr("class");
+
+        $('a[title="Home"]').html('<i class="material-icons md-18">home</i>&nbsp;Home');
+        $('a[title="Contact us"]').html('<i class="material-icons md-18">phone_in_talk</i>&nbsp;Contact');
+        $('a[title="Who we are"]').html('<i class="material-icons md-18">fingerprint</i>&nbsp;About');
+        $('a[title="Find the perfect projects for your dev hunger"]').html('<i class="material-icons md-18">web</i>&nbsp;Projects');
+        $('a[title="Find the best developers for your awesome projects"]').html('<i class="material-icons md-18">keyboard</i>&nbsp;Developers');
+        $('a[title="View and delete users"]').html('<i class="material-icons md-18">vpn_key</i>&nbsp;Admin');
+    </script>
 </body>
 </html>

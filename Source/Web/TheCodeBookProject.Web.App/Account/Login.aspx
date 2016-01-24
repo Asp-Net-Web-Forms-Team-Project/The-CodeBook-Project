@@ -1,9 +1,16 @@
-﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TheCodeBookProject.Web.App.Account.Login" Async="true" %>
+﻿<%@ Page 
+    Title="Log in" 
+    Language="C#" 
+    MasterPageFile="~/Site.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="Login.aspx.cs" 
+    Inherits="TheCodeBookProject.Web.App.Account.Login" 
+    Async="true" %>
 
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %></h2>
+    <h2><%: this.Title %></h2>
     <div class="row">
         <div class="col-md-8">
             <section id="loginForm">

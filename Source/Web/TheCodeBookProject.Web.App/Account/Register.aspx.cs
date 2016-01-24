@@ -31,17 +31,12 @@
             if (result.Succeeded)
             {
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"] ?? "~/Home", Response);
             }
             else 
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
-        }
-
-        protected void Cancel_Click(object sender, EventArgs e)
-        {
-            this.Response.Redirect("/");
         }
     }
 }

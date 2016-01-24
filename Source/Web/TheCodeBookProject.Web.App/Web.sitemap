@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Home.aspx" title="Home"  description="Home">
+    <siteMapNode url="~/Projects/View.aspx" title="Projects"  description="Find the perfect projects for your dev hunger" >
+      <siteMapNode url="~/Projects/Create.aspx" title="Create" description="Create the next bug thing"/>
+      <siteMapNode url="~/Projects/UserProjects.aspx" title="My Projects" description="Track your project experience - current and past projects"/>
+    </siteMapNode>
+    <siteMapNode url="~/Developers/View.aspx" title="Developers"  description="Find the best developers for your awesome projects" />
+    <siteMapNode url="~/Contact.aspx" title="Contact" description="Contact us"/>
+    <siteMapNode url="~/About.aspx" title="About" description="Who we are"/>
+    <siteMapNode url="~/Account/Admin.aspx" title="Admin" description="View and delete users"/>
+  </siteMapNode>
+</siteMap>
