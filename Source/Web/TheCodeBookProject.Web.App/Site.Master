@@ -14,8 +14,8 @@
     <link href="Content/bootstrap-material-design.min.css" rel="stylesheet" />
     <link href="Content/ripples.min.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <form runat="server">

@@ -66,7 +66,6 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
