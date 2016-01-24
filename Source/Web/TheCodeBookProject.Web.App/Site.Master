@@ -1,11 +1,14 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TheCodeBookProject.Web.App.SiteMaster" %>
+﻿<%@ Master Language="C#"
+    AutoEventWireup="true"
+    CodeBehind="Site.master.cs"
+    Inherits="TheCodeBookProject.Web.App.SiteMaster" %>
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: this.Page.Title %></title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-material-design.min.css" rel="stylesheet" />
@@ -26,7 +29,7 @@
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" Path="~/Scripts/jquery-1.10.2.min.js"/>
+                <asp:ScriptReference Name="jquery" Path="~/Scripts/jquery-1.10.2.min.js" />
                 <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Path="~/Scripts/bootstrap.js" />
@@ -35,7 +38,7 @@
                 <asp:ScriptReference Path="~/Scripts/ripples.js" />
             </Scripts>
         </asp:ScriptManager>
-        <div class="navbar navbar-default navbar-fixed-top">
+        <%--<div class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -43,11 +46,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">The CodeBook Project</a>
                 </div>
                 <div class="navbar-collapse collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/Home">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
@@ -60,7 +63,55 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <a runat="server" href="~/Account/Profile" title="Manage your account">
+                                        <%:this.Context.User.Identity.GetUserName() %> !
+                                    </a>
+                                </li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>--%>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/Home">The CodeBook Project</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-responsive-collapse">
+                    <asp:Menu
+                        ID="NavigationMenu"
+                        runat="server"
+                        CssClass="navbar-collapse collapse navbar-responsive-collapse"
+                        EnableViewState="False"
+                        IncludeStyleBlock="false"
+                        Orientation="Horizontal"
+                        DataSourceID="SiteMapDataSource"
+                        StaticDisplayLevels="2">
+                    </asp:Menu>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a runat="server" href="~/Account/Profile" title="Manage your account">
+                                        <%:this.Context.User.Identity.GetUserName() %>
+                                    </a>
+                                </li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -78,6 +129,16 @@
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>
         </div>
+        <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
     </form>
+    <script>
+        'use strict';
+        $(".navbar-collapse.collapse.navbar-responsive-collapse").removeAttr("style");
+        $(".navbar-collapse.collapse.navbar-responsive-collapse").removeAttr("style");
+        $("ul.level1").removeAttr("style").addClass("nav navbar-nav");
+        $("ul.level3").removeAttr("style").addClass("dropdown-menu").parent().addClass("dropdown").removeAttr("style");
+        //$("#NavigationMenu ul.level1").unwrap();
+        //$('#NavigationMenu_SkipLink').prev().remove();
+    </script>
 </body>
 </html>
