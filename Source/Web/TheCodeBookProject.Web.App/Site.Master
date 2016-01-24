@@ -14,6 +14,8 @@
     <link href="Content/bootstrap-material-design.min.css" rel="stylesheet" />
     <link href="Content/ripples.min.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
 </head>
 <body>
     <form runat="server">
@@ -47,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/Home">The CodeBook Project</a>
+                    <a class="navbar-brand" runat="server" href="~/Home"><i class="material-icons md-30">developer_mode</i> The CodeBook Project</a>
                 </div>
                 <div class="navbar-collapse collapse navbar-responsive-collapse">
                     <asp:Menu
@@ -71,12 +73,11 @@
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <a runat="server" href="~/Account/Profile" title="Manage your account">
-                                        Welcome, <%:this.Context.User.Identity.GetUserName()%>!
+                                    <a runat="server" href="~/Account/Profile" title="Manage your account">Welcome, <strong><%:this.Context.User.Identity.GetUserName()%></strong>!
                                     </a>
                                 </li>
                                 <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Home" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus style="padding:0" runat="server" LogoutAction="Redirect" LogoutText="<i style='margin-top:18px;margin-right:10px' class='material-icons md-24'>power_settings_new</i>" LogoutPageUrl="~/Home" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
@@ -98,10 +99,32 @@
         'use strict';
         $(".navbar-collapse.collapse.navbar-responsive-collapse").removeAttr("style");
         $(".navbar-collapse.collapse.navbar-responsive-collapse").removeAttr("style");
-        $("ul.level1").removeAttr("style").addClass("nav navbar-nav");
-        var dropdown = $("ul.level3").removeAttr("style").addClass("dropdown-menu");
-        dropdown.parent().removeAttr("style");
-        dropdown.children().removeAttr("style").removeAttr("class").removeAttr("role").attr("style", "display:block!important;width:100%!important;").children().removeAttr("style").removeAttr("class");
+        $("ul.level1")
+            .removeAttr("style")
+            .addClass("nav navbar-nav");
+
+        var dropdown = $("ul.level3")
+            .removeAttr("style")
+            .addClass("dropdown-menu");
+        dropdown
+            .parent()
+            .removeAttr("style");
+        dropdown
+            .children()
+            .removeAttr("style")
+            .removeAttr("class")
+            .removeAttr("role")
+            .attr("style", "display:block!important;width:100%!important;")
+            .children()
+            .removeAttr("style")
+            .removeAttr("class");
+
+        $('a[title="Home"]').html('<i class="material-icons md-18">home</i>&nbsp;Home');
+        $('a[title="Contact us"]').html('<i class="material-icons md-18">phone_in_talk</i>&nbsp;Contact');
+        $('a[title="Who we are"]').html('<i class="material-icons md-18">fingerprint</i>&nbsp;About');
+        $('a[title="Find the perfect projects for your dev hunger"]').html('<i class="material-icons md-18">web</i>&nbsp;Projects');
+        $('a[title="Find the best developers for your awesome projects"]').html('<i class="material-icons md-18">keyboard</i>&nbsp;Developers');
+        $('a[title="View and delete users"]').html('<i class="material-icons md-18">vpn_key</i>&nbsp;Admin');
     </script>
 </body>
 </html>

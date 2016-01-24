@@ -6,7 +6,7 @@
       <siteMapNode url="~/Projects/UserProjects.aspx" title="My Projects" description="Track your project experience - current and past projects"/>
     </siteMapNode>
     <siteMapNode url="~/Developers/View.aspx" title="Developers"  description="Find the best developers for your awesome projects" />
-    <siteMapNode url="~/Contact.aspx" title="Contact" description="Leave us feedback and we will improve your experience"/>
+    <siteMapNode url="~/Contact.aspx" title="Contact" description="Contact us"/>
     <siteMapNode url="~/About.aspx" title="About" description="Who we are"/>
     <siteMapNode url="~/Account/Admin.aspx" title="Admin" description="View and delete users"/>
   </siteMapNode>
