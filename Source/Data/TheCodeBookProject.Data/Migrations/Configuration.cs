@@ -7,7 +7,8 @@ namespace TheCodeBookProject.Data.Migrations
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
-
+    using System.Collections.Generic;
+    using System.Linq;
     public class Configuration : DbMigrationsConfiguration<TheCodeBookProjectDbContext>
     {
         public Configuration()
@@ -67,6 +68,7 @@ namespace TheCodeBookProject.Data.Migrations
                 userManager.AddToRole(dbAdmin.Id, adminRoleName);
 
                 var seedUtils = new SeedHelper();
+                var devs = new List<User>();
 
                 for (int i = 0; i < 20; i++)
                 {
@@ -80,6 +82,7 @@ namespace TheCodeBookProject.Data.Migrations
 
                         if (i % 2 == 0)
                         {
+                            devs.Add(dbUser);
                             userManager.AddToRole(dbUser.Id, developerRoleName);
                         }
                         else
@@ -89,6 +92,7 @@ namespace TheCodeBookProject.Data.Migrations
                             project.Organizer = company;
                             company.Projects.Add(project);
                             dbUser.MyCompany = company;
+                            project.Developers.Add(devs.Last());
                             userManager.AddToRole(dbUser.Id, businessRoleName);
                         }
                     }
