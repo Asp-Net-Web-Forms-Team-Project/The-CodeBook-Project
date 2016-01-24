@@ -233,6 +233,8 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="UserControls\RatingVisualizer.ascx" />
+    <Content Include="UserControls\UserCard\Styles\UserCard.css" />
+    <Content Include="UserControls\UserCard\UserCard.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -446,6 +448,13 @@
     </Compile>
     <Compile Include="UserControls\RatingVisualizer.ascx.designer.cs">
       <DependentUpon>RatingVisualizer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserCard\UserCard.ascx.cs">
+      <DependentUpon>UserCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserCard\UserCard.ascx.designer.cs">
+      <DependentUpon>UserCard.ascx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

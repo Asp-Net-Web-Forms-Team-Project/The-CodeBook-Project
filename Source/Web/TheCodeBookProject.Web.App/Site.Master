@@ -16,6 +16,7 @@
     <link href="Content/Site.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
+    <link href="UserControls/UserCard/Styles/UserCard.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
