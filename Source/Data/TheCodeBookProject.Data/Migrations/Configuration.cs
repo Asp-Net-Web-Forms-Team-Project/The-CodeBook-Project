@@ -66,11 +66,11 @@ namespace TheCodeBookProject.Data.Migrations
                 User dbAdmin = userManager.FindByName(admin.UserName);
                 userManager.AddToRole(dbAdmin.Id, adminRoleName);
 
-                var userUtils = new UsersSeedHelper();
+                var seedUtils = new SeedHelper();
 
                 for (int i = 0; i < 20; i++)
                 {
-                    User user = userUtils.GetUser();
+                    User user = seedUtils.GetUser();
                     user.UserName += i;
 
                     IdentityResult identityResult = userManager.Create(user, password);
@@ -84,6 +84,11 @@ namespace TheCodeBookProject.Data.Migrations
                         }
                         else
                         {
+                            Company company = seedUtils.GetCompany();
+                            Project project = seedUtils.GetProject();
+                            project.Organizer = company;
+                            company.Projects.Add(project);
+                            dbUser.MyCompany = company;
                             userManager.AddToRole(dbUser.Id, businessRoleName);
                         }
                     }
