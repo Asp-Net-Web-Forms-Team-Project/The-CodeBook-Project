@@ -12,7 +12,6 @@
 
     <div class="row">
         <div class="col-md-6">
-
             <div class="well bs-component">
                 <fieldset>
                     <legend>Create a new account</legend>

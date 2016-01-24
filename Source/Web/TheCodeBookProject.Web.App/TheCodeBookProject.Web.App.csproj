@@ -190,6 +190,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\default.jpg" />
     <Content Include="Projects\Create.aspx" />
     <Content Include="Projects\UserProjects.aspx" />
     <Content Include="Projects\View.aspx" />

@@ -1,38 +1,27 @@
-﻿using System;
-using System.Web;
-using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using TheCodeBookProject.Web.Common.Identity;
-
-namespace TheCodeBookProject.Web.App.Account
+﻿namespace TheCodeBookProject.Web.App.Account
 {
+    using System;
+    using System.Web;
+    using System.Web.UI;
+
+    using Common.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+
     public partial class Login : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            RegisterHyperLink.NavigateUrl = "Register";
-
-            // Enable this once you have account confirmation enabled for password reset functionality
-            //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
-
             OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
-            string returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
-            if (!string.IsNullOrEmpty(returnUrl))
-            {
-                RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
-            }
         }
 
         protected void LogIn(object sender, EventArgs e)
         {
-            if (IsValid)
+            if (this.IsValid)
             {
                 ApplicationUserManager manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 ApplicationSignInManager signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
-                SignInStatus result = signinManager.PasswordSignIn(UserName.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
+                SignInStatus result = signinManager.PasswordSignIn(UserName.Text, Password.Text, isPersistent: false, shouldLockout: false);
 
                 switch (result)
                 {
@@ -43,10 +32,12 @@ namespace TheCodeBookProject.Web.App.Account
                         Response.Redirect("/Account/Lockout");
                         break;
                     case SignInStatus.RequiresVerification:
-                        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}",
-                                                        Request.QueryString["ReturnUrl"],
-                                                        RememberMe.Checked),
-                                          true);
+                        Response.Redirect(
+                            string.Format(
+                                "/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}",
+                                Request.QueryString["ReturnUrl"],
+                                false),
+                            true);
                         break;
                     case SignInStatus.Failure:
                     default:

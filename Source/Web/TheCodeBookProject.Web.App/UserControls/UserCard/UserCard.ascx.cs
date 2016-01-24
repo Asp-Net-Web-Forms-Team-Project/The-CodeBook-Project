@@ -2,7 +2,10 @@
 {
     using System;
     using System.Web.UI;
+
+    using Data;
     using Data.Models;
+    using Microsoft.AspNet.Identity;
 
     public partial class UserCards : UserControl
     {
@@ -10,7 +13,12 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.User = new User { };
+            using (var db = new TheCodeBookProjectDbContext())
+            {
+                string userId = this.Context.User.Identity.GetUserId();
+                this.User = db.Users.Find(userId);
+                this.userImage.ImageUrl = this.User.ImageUrl;
+            }
         }
     }
 }

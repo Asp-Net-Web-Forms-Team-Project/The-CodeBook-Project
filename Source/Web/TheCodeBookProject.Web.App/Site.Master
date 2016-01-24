@@ -78,7 +78,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <asp:LoginStatus style="padding:0" runat="server" LogoutAction="Redirect" LogoutText="<i style='margin-top:18px;margin-right:10px' class='material-icons md-24'>power_settings_new</i>" LogoutPageUrl="~/Home" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus Style="padding: 0" runat="server" LogoutAction="Redirect" LogoutText="<i style='margin-top:18px;margin-right:10px' class='material-icons md-24'>power_settings_new</i>" LogoutPageUrl="~/Home" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
@@ -89,13 +89,16 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
         </div>
+
+        <hr />
         <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
     </form>
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; <%: DateTime.Now.Year %> - The CodeBook Project</p>
+        </div>
+    </footer>
     <script>
         'use strict';
         $(".navbar-collapse.collapse.navbar-responsive-collapse").removeAttr("style");
