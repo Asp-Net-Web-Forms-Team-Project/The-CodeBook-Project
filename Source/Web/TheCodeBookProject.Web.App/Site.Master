@@ -38,45 +38,7 @@
                 <asp:ScriptReference Path="~/Scripts/ripples.js" />
             </Scripts>
         </asp:ScriptManager>
-        <%--<div class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">The CodeBook Project</a>
-                </div>
-                <div class="navbar-collapse collapse navbar-responsive-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Home">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <a runat="server" href="~/Account/Profile" title="Manage your account">
-                                        <%:this.Context.User.Identity.GetUserName() %> !
-                                    </a>
-                                </li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
-                </div>
-            </div>
-        </div>--%>
+
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -96,7 +58,8 @@
                         IncludeStyleBlock="false"
                         Orientation="Horizontal"
                         DataSourceID="SiteMapDataSource"
-                        StaticDisplayLevels="2">
+                        StaticDisplayLevels="2"
+                        OnMenuItemDataBound="NavigationMenu_MenuItemDataBound">
                     </asp:Menu>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -109,11 +72,11 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <a runat="server" href="~/Account/Profile" title="Manage your account">
-                                        <%:this.Context.User.Identity.GetUserName() %>
+                                        Welcome, <%:this.Context.User.Identity.GetUserName()%>!
                                     </a>
                                 </li>
                                 <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Home" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
@@ -136,9 +99,9 @@
         $(".navbar-collapse.collapse.navbar-responsive-collapse").removeAttr("style");
         $(".navbar-collapse.collapse.navbar-responsive-collapse").removeAttr("style");
         $("ul.level1").removeAttr("style").addClass("nav navbar-nav");
-        $("ul.level3").removeAttr("style").addClass("dropdown-menu").parent().addClass("dropdown").removeAttr("style");
-        //$("#NavigationMenu ul.level1").unwrap();
-        //$('#NavigationMenu_SkipLink').prev().remove();
+        var dropdown = $("ul.level3").removeAttr("style").addClass("dropdown-menu");
+        dropdown.parent().removeAttr("style");
+        dropdown.children().removeAttr("style").removeAttr("class").removeAttr("role").attr("style", "display:block!important;width:100%!important;").children().removeAttr("style").removeAttr("class");
     </script>
 </body>
 </html>

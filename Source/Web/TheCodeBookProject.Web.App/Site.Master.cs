@@ -74,10 +74,29 @@
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
 
-        protected void NavigationMenu_MenuItemDataBound(object sender, EventArgs e)
+        protected void NavigationMenu_MenuItemDataBound(object sender, MenuEventArgs e)
         {
+            if(this.ShouldRemoveItem(e.Item.Text))
+            {
+                e.Item.Parent.ChildItems.Remove(e.Item);
+            }
+        }
 
+        private bool ShouldRemoveItem(string itemText)
+        {
+            string user =this.Context.User.Identity.GetUserName();
+
+            if(string.IsNullOrEmpty(user))
+            {
+                if(itemText == "Home" || itemText == "About" || itemText == "Contact")
+                {
+                    return false;
+                }
+
+                return true;
+            }
+
+            return false;
         }
     }
-
 }
