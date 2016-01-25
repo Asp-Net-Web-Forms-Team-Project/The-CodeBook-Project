@@ -26,7 +26,7 @@
                 Email = this.Email.Text,
                 DateOfBirth = new DateTime(),
                 AboutMe = this.AboutMe.Text,
-                ImageUrl = "~/Images/" + this.UserName.Text + "/avatar." + this.Request.Files[0].FileName.Substring(this.Request.Files[0].FileName.LastIndexOf('.') + 1)
+                ImageUrl = "~/Images/" + this.UserName.Text + "/avatar" + this.Request.Files[0].FileName.Substring(this.Request.Files[0].FileName.LastIndexOf('.'))
             };
 
             IdentityResult result = manager.Create(user, this.Password.Text);
@@ -49,6 +49,7 @@
                 if (file.ContentLength <= 0) continue; //Skip unused file controls.
 
                 var fileExtension = file.FileName.Substring(file.FileName.LastIndexOf('.') + 1);
+
                 ImageResizer.ImageJob i = new ImageResizer.ImageJob(file, "~/Images/" + this.UserName.Text + "/avatar." + fileExtension, new ImageResizer.Instructions(
                             "width=250;height=250;format=" + fileExtension + ";mode=max;"));
                 i.CreateParentDirectory = true; //Auto-create the uploads directory.
