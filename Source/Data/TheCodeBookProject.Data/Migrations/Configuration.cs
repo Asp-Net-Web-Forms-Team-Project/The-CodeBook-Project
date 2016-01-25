@@ -60,6 +60,8 @@ namespace TheCodeBookProject.Data.Migrations
                     DateOfBirth = new DateTime(),
                     AboutMe = "The administrator of the web app",
                     ImageUrl = "~/Images/admin.jpg",
+                    Skills= "N/A",
+                    Knowledge = "N/A",
                     Rating = 5,
                     Votes = 1
                 };

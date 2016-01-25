@@ -129,6 +129,12 @@
         $('a[title="Find the perfect projects for your dev hunger"]').html('<i class="material-icons md-18">web</i>&nbsp;Projects');
         $('a[title="Find the best developers for your awesome projects"]').html('<i class="material-icons md-18">keyboard</i>&nbsp;Developers');
         $('a[title="View and delete users"]').html('<i class="material-icons md-18">vpn_key</i>&nbsp;Admin');
+
+        $('MainContent_UserDetailsView')
+            .removeAttr('style')
+            .removeAttr('rules')
+            .removeAttr('border')
+            .removeAttr('cell-spacing');
     </script>
 </body>
 </html>

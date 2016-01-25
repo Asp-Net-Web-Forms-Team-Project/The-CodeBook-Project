@@ -10,15 +10,6 @@
 namespace TheCodeBookProject.Web.App.Account {
     
     
-    public partial class Manage {
-        
-        /// <summary>
-        /// UserCard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TheCodeBookProject.Web.App.UserControls.UserCards UserCard;
+    public partial class Profile {
     }
 }

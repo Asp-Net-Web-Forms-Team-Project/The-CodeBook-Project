@@ -266,3 +266,15 @@ ul.nav.navbar-nav.navbar-right {
 .material-icons.md-72 {
     font-size: 72px;
 }
+
+table {
+    border-color: #EEEEEE;
+}
+
+#MainContent_UserDetailsView {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px !important;
+    border-bottom: 1px solid #ddd !important;
+    font-size: 18px;
+}

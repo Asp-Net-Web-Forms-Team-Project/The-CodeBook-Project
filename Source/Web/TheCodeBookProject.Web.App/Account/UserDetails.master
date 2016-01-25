@@ -1,0 +1,30 @@
+﻿<%@ Master 
+    Language="C#" 
+    MasterPageFile="~/Site.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="UserDetails.master.cs" 
+    Inherits="TheCodeBookProject.Web.App.Account.UserDetails" %>
+
+<%@ Register Src="~/UserControls/UserCard/UserCard.ascx" TagPrefix="codebook" TagName="UserCard" %>
+<%@ Register Src="~/UserControls/RatingVisualizer.ascx" TagPrefix="codebook" TagName="RatingVisualizer" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <codebook:UserCard runat="server" ID="UserCard" />
+    <div class="text-center">
+        <h2>Rating:</h2>
+        <codebook:RatingVisualizer runat="server" ID="RatingVisualizer" />
+    </div>
+    <asp:DetailsView AutoGenerateRows="false" runat="server" CssClass="table table-striped table-hover" ID="UserDetailsView">
+        <Fields>
+            <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="First name:" DataField="FirstName" />
+            <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Last name:" DataField="LastName" />
+            <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Email:" DataField="Email" />
+            <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Date of birth:" DataField="DateOfBirth" />
+            <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Knowledge:" DataField="Knowledge" />
+            <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Skills:" DataField="Skills" />
+        </Fields>
+    </asp:DetailsView>
+    <asp:ContentPlaceHolder ID="UserDetailsContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

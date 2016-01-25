@@ -189,6 +189,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Account\UserDetails.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\default.jpg" />
     <Content Include="Projects\Create.aspx" />
@@ -357,6 +358,13 @@
     </Compile>
     <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
       <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\UserDetails.master.cs">
+      <DependentUpon>UserDetails.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\UserDetails.master.designer.cs">
+      <DependentUpon>UserDetails.master</DependentUpon>
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
