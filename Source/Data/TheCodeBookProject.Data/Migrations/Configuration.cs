@@ -1,14 +1,15 @@
 namespace TheCodeBookProject.Data.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
+    using System.Linq;
 
     using Helpers;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
-    using System.Collections.Generic;
-    using System.Linq;
+
     public class Configuration : DbMigrationsConfiguration<TheCodeBookProjectDbContext>
     {
         public Configuration()
@@ -60,12 +61,12 @@ namespace TheCodeBookProject.Data.Migrations
                     DateOfBirth = new DateTime(),
                     AboutMe = "The administrator of the web app",
                     ImageUrl = "~/Images/admin.jpg",
-                    Skills= "N/A",
+                    Skills = "N/A",
                     Knowledge = "N/A",
                     Rating = 5,
                     Votes = 1
                 };
-                
+
                 string password = "123456";
                 IdentityResult adminIdentityResult = userManager.Create(admin, password);
                 User dbAdmin = userManager.FindByName(admin.UserName);
@@ -78,6 +79,7 @@ namespace TheCodeBookProject.Data.Migrations
                 {
                     User user = seedUtils.GetUser();
                     user.UserName += i;
+                    user.Email = user.FirstName + "@" + user.LastName + ".it";
 
                     IdentityResult identityResult = userManager.Create(user, password);
                     if (identityResult.Succeeded)

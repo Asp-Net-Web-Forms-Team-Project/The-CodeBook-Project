@@ -135,6 +135,12 @@
             .removeAttr('rules')
             .removeAttr('border')
             .removeAttr('cell-spacing');
+
+        $('#MainContent_UserDetailsContent_userProjectsGrid')
+            .removeAttr('style')
+            .removeAttr('border')
+            .removeAttr('cell-spacing');
+
     </script>
 </body>
 </html>

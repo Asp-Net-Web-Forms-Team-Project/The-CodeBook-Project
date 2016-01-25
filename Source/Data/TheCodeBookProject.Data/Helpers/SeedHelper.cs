@@ -18,7 +18,7 @@
 
         public User GetUser()
         {
-            var user = new Models.User
+            var user = new User
             {
                 FirstName = this.GetStringItem(this.firstNames),
                 LastName = this.GetStringItem(this.lastNames),

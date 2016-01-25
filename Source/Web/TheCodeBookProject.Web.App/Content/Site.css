@@ -274,7 +274,24 @@ table {
 #MainContent_UserDetailsView {
     margin-left: auto;
     margin-right: auto;
-    width: 400px !important;
+    width: 600px !important;
     border-bottom: 1px solid #ddd !important;
     font-size: 18px;
 }
+
+#MainContent_UserDetailsContent_userProjectsGrid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 570px !important;
+    border: 1px solid #ddd !important;
+    font-size: 16px;
+    text-align: center;
+}
+
+    #MainContent_UserDetailsContent_userProjectsGrid th {
+        text-align: center;
+    }
+
+    .user-projects .panel-heading {
+        font-size: 25px;
+    }

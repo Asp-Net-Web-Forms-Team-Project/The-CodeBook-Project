@@ -75,7 +75,7 @@
 
         protected void NavigationMenu_MenuItemDataBound(object sender, MenuEventArgs e)
         {
-            if(this.ShouldRemoveItem(e.Item.Text))
+            if (this.ShouldRemoveItem(e.Item.Text))
             {
                 e.Item.Parent.ChildItems.Remove(e.Item);
             }
@@ -83,11 +83,11 @@
 
         private bool ShouldRemoveItem(string itemText)
         {
-            string user =this.Context.User.Identity.GetUserName();
+            string user = this.Context.User.Identity.GetUserName();
 
-            if(string.IsNullOrEmpty(user))
+            if (string.IsNullOrEmpty(user))
             {
-                if(itemText == "Home" || itemText == "About" || itemText == "Contact")
+                if (itemText == "Home" || itemText == "About" || itemText == "Contact")
                 {
                     return false;
                 }
