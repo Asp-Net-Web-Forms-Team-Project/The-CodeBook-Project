@@ -86,6 +86,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="UploadImage" CssClass="col-md-2 control-label">Upload profile picture</asp:Label>
+                        <div class="col-md-10">
+                            <asp:FileUpload runat="server" ID="UploadImage" CssClass="form-control" placeholder="Choose image" accept=".png,.jpg,.gif" />
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:HyperLink runat="server" NavigateUrl="~/Home" Text="Cancel" CssClass="btn btn-default" />
                             <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />

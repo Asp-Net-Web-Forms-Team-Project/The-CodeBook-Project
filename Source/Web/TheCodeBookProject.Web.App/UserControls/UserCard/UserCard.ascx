@@ -6,7 +6,7 @@
 
 <div class="user-card">
     <h4 class="card-title"><%: this.User.UserName %></h4>
-    <asp:Image runat="server" ID="userImage" />
+    <asp:Image runat="server" ID="userImage" BorderColor="#009688" BorderWidth="1" />
     <h6 class="card-subtitle text-muted"><%: this.User.FirstName + " " + this.User.LastName %></h6>
     <div class="card-block">
         <p class="card-text"><%: this.User.AboutMe %></p>
