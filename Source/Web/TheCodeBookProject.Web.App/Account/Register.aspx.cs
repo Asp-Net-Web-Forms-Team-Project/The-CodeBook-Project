@@ -26,7 +26,7 @@
                 Email = this.Email.Text,
                 DateOfBirth = new DateTime(),
                 AboutMe = this.AboutMe.Text,
-                ImageUrl = "~/Images/" + this.UserName.Text + "/avatar." + this.Request.Files[0].FileName.Substring(this.Request.Files[0].FileName.LastIndexOf('.'))
+                ImageUrl = "~/Images/" + this.UserName.Text + "/avatar" + this.Request.Files[0].FileName.Substring(this.Request.Files[0].FileName.LastIndexOf('.'))
             };
 
             IdentityResult result = manager.Create(user, this.Password.Text);
