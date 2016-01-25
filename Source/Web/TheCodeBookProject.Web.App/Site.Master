@@ -141,6 +141,14 @@
             .removeAttr('border')
             .removeAttr('cell-spacing');
 
+        $("#MainContent_UsersGridView table td")
+            .addClass('btn btn-default btn-raised btn-sm');
+
+        $("#MainContent_UsersGridView table td a")
+            .css({
+                textDecoration: "none"
+            });
+
     </script>
 </body>
 </html>

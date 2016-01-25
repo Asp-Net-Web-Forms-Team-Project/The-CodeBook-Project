@@ -8,6 +8,8 @@
     <siteMapNode url="~/Developers/View.aspx" title="Developers"  description="Find the best developers for your awesome projects" />
     <siteMapNode url="~/Contact.aspx" title="Contact" description="Contact us"/>
     <siteMapNode url="~/About.aspx" title="About" description="Who we are"/>
-    <siteMapNode url="~/Account/Admin.aspx" title="Admin" description="View and delete users"/>
+    <siteMapNode url="~/Admin/Tools.aspx" title="Admin" description="Choose what to manage">
+      <siteMapNode url="~/Admin/Users.aspx" title="Users" description="Edit or delete users"/>
+    </siteMapNode>
   </siteMapNode>
 </siteMap>
