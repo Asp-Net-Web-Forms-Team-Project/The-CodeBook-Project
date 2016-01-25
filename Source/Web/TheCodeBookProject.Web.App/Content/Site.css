@@ -292,6 +292,29 @@ table {
         text-align: center;
     }
 
-    .user-projects .panel-heading {
-        font-size: 25px;
-    }
+.user-projects .panel-heading {
+    font-size: 25px;
+}
+
+input[type=checkbox] {
+    transform: scale(2.0) !important;
+    -webkit-transform: scale(2.0) !important;
+}
+
+#MainContent_UsersGridView td {
+    vertical-align: middle !important;
+}
+
+#MainContent_UsersGridView th {
+    text-align: center;
+    font-size: 18px;
+}
+
+#MainContent_UsersGridView {
+    font-size: 12px !important;
+    width: 1138px !important;
+}
+
+#MainContent_UsersGridView input[type=text] {
+    width: 112px;
+}
