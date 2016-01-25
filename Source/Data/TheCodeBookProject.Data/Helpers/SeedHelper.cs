@@ -25,7 +25,9 @@
                 Knowledge = this.GetStringItem(this.knowledge) + ", " + this.GetStringItem(this.knowledge),
                 Skills = this.GetStringItem(this.skills) + ", " + this.GetStringItem(this.skills),
                 DateOfBirth = new DateTime(),
-                ImageUrl = "~/Images/default.jpg"
+                ImageUrl = "~/Images/default.jpg",
+                Rating = random.Next(10, 51),
+                Votes = 10
             };
 
             user.UserName = user.FirstName;
@@ -40,7 +42,9 @@
             {
                 Name = this.GetStringItem(this.companyNamesFirstWords) + " " +
                         this.GetStringItem(this.companyNamesSecondWords) + " " +
-                        this.GetStringItem(this.companyTypes)
+                        this.GetStringItem(this.companyTypes),
+                Rating = random.Next(10, 51),
+                Votes = 10 
             };
 
             return company;

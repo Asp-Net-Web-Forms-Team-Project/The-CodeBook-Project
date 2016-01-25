@@ -29,7 +29,7 @@ namespace TheCodeBookProject.Data.Migrations
             {
                 string adminRoleName = "admin";
                 string developerRoleName = "developer";
-                string businessRoleName = "businessman";
+                string businessRoleName = "business";
 
                 var adminRole = new IdentityRole
                 {
@@ -59,7 +59,9 @@ namespace TheCodeBookProject.Data.Migrations
                     Email = "admin@codebook.com",
                     DateOfBirth = new DateTime(),
                     AboutMe = "The administrator of the web app",
-                    ImageUrl = "~/Images/default.jpg"
+                    ImageUrl = "~/Images/admin.jpg",
+                    Rating = 5,
+                    Votes = 1
                 };
                 
                 string password = "123456";
