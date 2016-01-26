@@ -9,10 +9,20 @@
     using Data.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
-    using Microsoft.AspNet.Identity.EntityFramework;
 
     public partial class Register : Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!this.IsPostBack)
+            {
+                if (this.Request.IsAuthenticated)
+                {
+                    this.Response.Redirect("~/Home.aspx");
+                }
+            }
+        }
+
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             this.Upload_Image();

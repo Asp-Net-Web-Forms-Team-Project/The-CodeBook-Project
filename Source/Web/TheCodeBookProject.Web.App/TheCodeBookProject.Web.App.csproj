@@ -185,9 +185,9 @@
     <Content Include="Content\materialize.min.css" />
     <Content Include="Content\ripples.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Account\Web.config" />
     <Content Include="Developers\View.aspx" />
     <Content Include="ErrorPages\NotFound.aspx" />
+    <Content Include="ErrorPages\Unauthorized.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -418,6 +418,13 @@
     </Compile>
     <Compile Include="ErrorPages\NotFound.aspx.designer.cs">
       <DependentUpon>NotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\Unauthorized.aspx.cs">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\Unauthorized.aspx.designer.cs">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

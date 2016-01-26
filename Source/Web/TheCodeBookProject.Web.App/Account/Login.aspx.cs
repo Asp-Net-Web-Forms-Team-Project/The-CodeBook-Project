@@ -11,6 +11,19 @@
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!this.IsPostBack)
+            {
+                if (this.Request.IsAuthenticated)
+                {
+                    if (!string.IsNullOrEmpty(Request.QueryString["ReturnUrl"]))
+                    {
+                        this.Response.Redirect("~/Unauthorized.aspx");
+                    }
+
+                    this.Response.Redirect("~/Home.aspx");
+                }
+            }
+
             OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
         }
 
