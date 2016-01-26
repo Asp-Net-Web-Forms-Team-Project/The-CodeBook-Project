@@ -315,6 +315,33 @@ input[type=checkbox] {
     width: 1138px !important;
 }
 
-#MainContent_UsersGridView input[type=text] {
-    width: 112px;
+    #MainContent_UsersGridView input[type=text] {
+        width: 112px;
+    }
+
+#MainContent_MostRecentProjectsGridView {
+    border: 1px solid grey;
 }
+
+    #MainContent_MostRecentProjectsGridView th {
+        border-top: 1px solid grey;
+        text-align: center;
+    }
+
+    #MainContent_MostRecentProjectsGridView td {
+        height: 92px;
+        vertical-align: middle;
+    }
+
+#MainContent_TopRatedDevelopersGridView {
+    border: 1px solid grey;
+}
+
+    #MainContent_TopRatedDevelopersGridView th {
+        border-top: 1px solid grey;
+        text-align: center;
+    }
+
+    #MainContent_TopRatedDevelopersGridView td {
+        vertical-align: middle;
+    }

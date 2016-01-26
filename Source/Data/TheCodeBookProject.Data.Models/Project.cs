@@ -1,5 +1,6 @@
 ﻿namespace TheCodeBookProject.Data.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -13,6 +14,7 @@
         {
             this.developers = new HashSet<User>();
             this.projectNotifications = new HashSet<ProjectNotification>();
+            this.DateCreated = DateTime.UtcNow;
         }
 
         [Key]
@@ -25,6 +27,8 @@
         [Required]
         [MaxLength(300)]
         public string Description { get; set; }
+
+        public DateTime DateCreated { get; set; }
 
         public int OrganizerId { get; set; }
 
