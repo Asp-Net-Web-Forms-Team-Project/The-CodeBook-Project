@@ -21,7 +21,12 @@
 
         public IQueryable<Project> GetUserProjectsGrid()
         {
-            string currentUserId = this.Context.User.Identity.GetUserId();
+            string currentUserId = this.Request.QueryString["UserId"];
+            if (currentUserId == null)
+            {
+                currentUserId = this.Context.User.Identity.GetUserId();
+            }
+
             IQueryable<Project> userProjects = this.Projects.GetByUserId(currentUserId);
             this.HasProjects = userProjects.Count() > 0;
 

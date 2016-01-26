@@ -4,21 +4,27 @@
     using System.Collections;
     using System.Web.UI;
 
-    using Data;
     using Data.Models;
     using Microsoft.AspNet.Identity;
+    using Ninject;
+    using Services.Data.Contracts;
 
     public partial class UserDetails : MasterPage
     {
+        [Inject]
+        public IUsersService Users { get; set; }
+
         public User DbUser { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            using (var db = new TheCodeBookProjectDbContext())
+            string userId = this.Request.QueryString["UserId"];
+            if (userId == null)
             {
-                string userId = this.Context.User.Identity.GetUserId();
-                this.DbUser = db.Users.Find(userId);
+                userId = this.Context.User.Identity.GetUserId();
             }
+
+            this.DbUser = this.Users.GetById(userId);
 
             var list = new ArrayList();
             list.Add(this.DbUser);

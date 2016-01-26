@@ -15,7 +15,12 @@
         {
             using (var db = new TheCodeBookProjectDbContext())
             {
-                string userId = this.Context.User.Identity.GetUserId();
+                string userId = this.Request.QueryString["UserId"];
+                if (userId == null)
+                {
+                    userId = this.Context.User.Identity.GetUserId();
+                }
+
                 this.User = db.Users.Find(userId);
                 this.userImage.ImageUrl = this.User.ImageUrl;
             }
