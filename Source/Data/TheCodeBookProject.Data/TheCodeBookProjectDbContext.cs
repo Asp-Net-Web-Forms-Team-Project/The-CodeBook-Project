@@ -6,7 +6,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
-    public class TheCodeBookProjectDbContext : IdentityDbContext<User>
+    public class TheCodeBookProjectDbContext : IdentityDbContext<User>, ITheCodeBookProjectDbContext
     {
         private const string DbConnectionName = "DefaultConnection";
 

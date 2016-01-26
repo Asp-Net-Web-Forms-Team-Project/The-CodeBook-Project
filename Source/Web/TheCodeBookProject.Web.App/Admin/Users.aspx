@@ -21,11 +21,10 @@
                 DataKeyNames="Id"
                 AutoGenerateColumns="false">
                 <Columns>
-                    <asp:BoundField DataField="UserName" HeaderText="Username" SortExpression="UserName"></asp:BoundField>
-                    <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email"></asp:BoundField>
-                    <asp:BoundField DataField="FirstName" HeaderText="First name" SortExpression="FirstName"></asp:BoundField>
-                    <asp:BoundField DataField="LastName" HeaderText="Last name" SortExpression="LastName"></asp:BoundField>
-                    <asp:BoundField DataField="MyCompany.Name" HeaderText="Company" SortExpression="MyCompany"></asp:BoundField>
+                    <asp:DynamicField DataField="UserName" HeaderText="Username" SortExpression="UserName"></asp:DynamicField>
+                    <asp:DynamicField DataField="Email" HeaderText="Email" SortExpression="Email"></asp:DynamicField>
+                    <asp:DynamicField DataField="FirstName" HeaderText="First name" SortExpression="FirstName"></asp:DynamicField>
+                    <asp:DynamicField DataField="LastName" HeaderText="Last name" SortExpression="LastName"></asp:DynamicField>
                     <asp:CheckBoxField ControlStyle-CssClass="checkbox-primary" DataField="IsDeactivated" HeaderText="Deactivated" SortExpression="IsDeactivated" />
                     <asp:CommandField HeaderText="Edit" ShowEditButton="true" ControlStyle-CssClass="btn btn-default btn-raised" />
                     <asp:TemplateField HeaderText="View">
