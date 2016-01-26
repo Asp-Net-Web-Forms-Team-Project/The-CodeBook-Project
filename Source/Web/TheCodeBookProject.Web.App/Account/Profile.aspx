@@ -8,7 +8,7 @@
 
 <asp:Content ContentPlaceHolderID="UserDetailsContent" runat="server">
     <div class="panel panel-default user-projects" style="width: 600px; margin-left: auto; margin-right: auto">
-        <div class="panel-heading text-center">My Projects</div>
+        <div class="panel-heading text-center">Projects</div>
         <div class="panel-body">
             <% if (this.HasProjects)
                 {
@@ -37,10 +37,28 @@
                 else
                 {
             %>
-            <h4 class="text-center">You have not participated in any projects</h4>
+            <h4 class="text-center">No projects to display</h4>
             <%
                 }
             %>
         </div>
     </div>
+    <%if (this.User.IsInRole("admin"))
+        {
+    %>
+    <div class="panel panel-warning text-center" style="width: 300px; margin-left: auto; margin-right: auto;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Administrative tools</h3>
+        </div>
+        <div class="panel-body">
+            <asp:Button runat="server" ID="MakeAdminButton" CssClass="btn btn-default btn-raised" Text="Make admin" OnClick="MakeAdminButton_Click"/>
+            <br />
+            <asp:Button runat="server" ID="EditUserButton" CssClass="btn btn-default btn-raised" Text="Edit" OnClick="EditUserButton_Click"/>
+            <br />
+            <asp:Button runat="server" ID="DeleteUserButton" CssClass="btn btn-default btn-raised" Text="Delete" OnClick="DeleteUserButton_Click"/>
+        </div>
+    </div>
+    <%
+        }
+    %>
 </asp:Content>

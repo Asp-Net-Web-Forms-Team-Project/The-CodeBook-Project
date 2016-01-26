@@ -260,6 +260,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="UserControls\HomeStatistics\HomeStatistics.ascx" />
     <Content Include="UserControls\RatingVisualizer.ascx" />
     <Content Include="UserControls\UserCard\Styles\UserCard.css" />
     <Content Include="UserControls\UserCard\UserCard.ascx" />
@@ -495,6 +496,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UserControls\HomeStatistics\HomeStatistics.ascx.cs">
+      <DependentUpon>HomeStatistics.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\HomeStatistics\HomeStatistics.ascx.designer.cs">
+      <DependentUpon>HomeStatistics.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\RatingVisualizer.ascx.cs">
       <DependentUpon>RatingVisualizer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

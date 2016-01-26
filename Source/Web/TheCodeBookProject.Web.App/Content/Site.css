@@ -319,29 +319,31 @@ input[type=checkbox] {
         width: 112px;
     }
 
-#MainContent_MostRecentProjectsGridView {
+#MainContent_HomeStatistics_MostRecentProjectsGridView {
     border: 1px solid grey;
 }
 
-    #MainContent_MostRecentProjectsGridView th {
+    #MainContent_HomeStatistics_MostRecentProjectsGridView th {
         border-top: 1px solid grey;
         text-align: center;
+        white-space: nowrap;
     }
 
-    #MainContent_MostRecentProjectsGridView td {
-        height: 92px;
+    #MainContent_HomeStatistics_MostRecentProjectsGridView td {
+        height: 94px;
         vertical-align: middle;
     }
 
-#MainContent_TopRatedDevelopersGridView {
+#MainContent_HomeStatistics_TopRatedDevelopersGridView {
     border: 1px solid grey;
 }
 
-    #MainContent_TopRatedDevelopersGridView th {
+    #MainContent_HomeStatistics_TopRatedDevelopersGridView th {
         border-top: 1px solid grey;
         text-align: center;
+        white-space: nowrap;
     }
 
-    #MainContent_TopRatedDevelopersGridView td {
+    #MainContent_HomeStatistics_TopRatedDevelopersGridView td {
         vertical-align: middle;
     }

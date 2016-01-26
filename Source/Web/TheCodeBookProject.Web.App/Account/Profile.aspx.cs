@@ -1,5 +1,6 @@
 ﻿namespace TheCodeBookProject.Web.App.Account
 {
+    using System;
     using System.Linq;
     using System.Web.UI;
 
@@ -7,6 +8,8 @@
     using Microsoft.AspNet.Identity;
     using Ninject;
     using Services.Data.Contracts;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Data;
 
     public partial class Profile : Page
     {
@@ -31,6 +34,25 @@
             this.HasProjects = userProjects.Count() > 0;
 
             return userProjects;
+        }
+
+        protected void MakeAdminButton_Click(object sender, EventArgs e)
+        {
+            string userId = this.Request.QueryString["UserId"];
+            var userStore = new UserStore<User>(new TheCodeBookProjectDbContext());
+            var userManager = new UserManager<User>(userStore);
+            userManager.AddToRole(userId, "admin");
+            this.Response.Redirect("~/Admin/Users.aspx");
+        }
+
+        protected void EditUserButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DeleteUserButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
