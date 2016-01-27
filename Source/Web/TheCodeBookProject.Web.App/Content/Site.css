@@ -338,12 +338,12 @@ input[type=checkbox] {
     border: 1px solid grey;
 }
 
-    #MainContent_HomeStatistics_TopRatedDevelopersGridView th {
+    th {
         border-top: 1px solid grey;
         text-align: center;
         white-space: nowrap;
     }
 
-    #MainContent_HomeStatistics_TopRatedDevelopersGridView td {
-        vertical-align: middle;
+    td {
+        vertical-align: middle !important;
     }
