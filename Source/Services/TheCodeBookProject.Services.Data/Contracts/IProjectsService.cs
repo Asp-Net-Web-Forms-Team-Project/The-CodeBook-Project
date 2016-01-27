@@ -9,6 +9,10 @@
 
         IQueryable<Project> GetByUserId(string userId);
 
+        IQueryable<Project> GetById(int id);
+
+        void ApplyById(int id, string devId);
+
         int SaveChanges();
     }
 }

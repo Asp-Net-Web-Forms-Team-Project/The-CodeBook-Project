@@ -7,7 +7,7 @@
         public int Id { get; set; }
 
         [Required]
-        public int DeveloperId { get; set; }
+        public string DeveloperId { get; set; }
         
         public User Developer { get; set; }
 
