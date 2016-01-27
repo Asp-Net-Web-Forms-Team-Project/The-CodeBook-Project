@@ -31,7 +31,7 @@
 
             this.UserDetailsView.DataSource = list;
             this.UserDetailsView.DataBind();
-            this.UserDetailsView.Rows[3].Cells[1].Text = this.DbUser.DateOfBirth.Date.ToLongDateString();
+            this.UserDetailsView.Rows[4].Cells[1].Text = this.DbUser.DateOfBirth.Date.ToLongDateString();
         }
 
         protected void Page_PreRender()

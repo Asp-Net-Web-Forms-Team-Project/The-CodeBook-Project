@@ -15,6 +15,8 @@
 
         void ApplyById(int id, string devId);
 
+        void Create(Project project);
+
         int SaveChanges();
     }
 }

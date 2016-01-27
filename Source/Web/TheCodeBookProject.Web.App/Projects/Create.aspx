@@ -27,19 +27,33 @@
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Description" CssClass="form-control" TextMode="MultiLine" placeholder="Description" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Description"
-                                CssClass="text-danger" ErrorMessage="Description is required" />
+                                CssClass="text-danger" Display="None" ErrorMessage="Description is required" />
                         </div>
                     </div>
+                    <%
+                        if (this.UserCompany == null)
+                        {
+                    %>
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="Company" CssClass="col-md-2 control-label">Company name:</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="Company" CssClass="form-control" TextMode="SingleLine" placeholder="Company name" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Company" Display="None" ErrorMessage="You do not have a company to your name. It is required" />
+                        </div>
+                    </div>
+                    <%
+                        }
+                    %>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="DevsNeeded" CssClass="col-md-2 control-label">Developers</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="DevsNeeded" TextMode="Number" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="DevsNeeded" CssClass="text-danger" ErrorMessage="Number of devs should be specified" />
-                            <asp:RangeValidator runat="server" ControlToValidate="DevsNeeded" MinimumValue="2" MaximumValue="100000" Type="Integer" ErrorMessage="Number of devs must be at leats 2" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="DevsNeeded" Display="None" CssClass="text-danger" ErrorMessage="Number of devs should be specified" />
+                            <asp:RangeValidator runat="server" ControlToValidate="DevsNeeded" Display="None" MinimumValue="2" MaximumValue="100000" Type="Integer" ErrorMessage="Number of devs must be at leats 2" />
                         </div>
                     </div>
-                    <div class="form-group">
-                        <asp:UpdatePanel class="col-md-10 col-md-offset-2" runat="server" ID="DeveloperBusinessUpdatePanel">
+                    <div class="col-md-offset-2 col-md-6">
+                        <asp:UpdatePanel runat="server" ID="DeveloperBusinessUpdatePanel">
                             <ContentTemplate>
                                 <asp:Panel runat="server" ID="KnowledgePanel" Visible="true">
                                     <h5 style="color: #BDBDBD;">What knowledge do you require?</h5>
@@ -79,16 +93,16 @@
                         </asp:UpdatePanel>
                     </div>
                     <br />
-                    <div class="form-group">
+                    <div class="form-group" style="clear: left">
                         <asp:Label runat="server" AssociatedControlID="Reward" CssClass="col-md-2 control-label">Developers</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Reward" TextMode="Number" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Reward" CssClass="text-danger" ErrorMessage="Reward should be specified" />
-                            <asp:RangeValidator runat="server" ControlToValidate="Reward" ErrorMessage="Monetary award must be at least 1" MinimumValue="1" MaximumValue="1000000" Type="Integer" />
+                            <asp:RangeValidator runat="server" ControlToValidate="Reward" Display="None" ErrorMessage="Monetary award must be at least 1" MinimumValue="1" MaximumValue="1000000" Type="Integer" />
                         </div>
                     </div>
                     <div class="form-group text-center">
-                        <asp:Button runat="server" ID="Submit" CssClass="btn btn-default btn-raised" Text="Submit" />
+                        <asp:Button runat="server" ID="Submit" OnClick="SubmitClick" CssClass="btn btn-default btn-raised" Text="Submit" />
                     </div>
                 </fieldset>
             </div>

@@ -31,6 +31,15 @@ namespace TheCodeBookProject.Web.App.Projects {
         protected global::System.Web.UI.WebControls.TextBox Description;
         
         /// <summary>
+        /// Company control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Company;
+        
+        /// <summary>
         /// DevsNeeded control.
         /// </summary>
         /// <remarks>

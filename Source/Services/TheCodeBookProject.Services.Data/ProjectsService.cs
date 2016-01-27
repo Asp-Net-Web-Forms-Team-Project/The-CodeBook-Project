@@ -46,6 +46,11 @@
             firstOrDefault?.ProjectNotifications.Add(notification);
         }
 
+        public void Create(Project project)
+        {
+            this.projects.Add(project);
+        }
+
         public int SaveChanges()
         {
             return this.projects.SaveChanges();

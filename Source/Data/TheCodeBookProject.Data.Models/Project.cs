@@ -39,11 +39,11 @@
         public int DevelopersNeeded { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(500)]
         public string KnowledgeRequired { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(500)]
         public string SkillsRequired { get; set; }
 
         [Column(TypeName = "Money")]

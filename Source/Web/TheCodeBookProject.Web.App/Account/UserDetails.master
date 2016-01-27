@@ -19,6 +19,7 @@
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="First name:" DataField="FirstName" />
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Last name:" DataField="LastName" />
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Email:" DataField="Email" />
+            <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Company name:" DataField="MyCompany.Name" />
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Date of birth:" DataField="DateOfBirth" />
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Knowledge:" DataField="Knowledge" />
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Skills:" DataField="Skills" />
