@@ -7,6 +7,8 @@
     {
         IQueryable<Project> GetAll();
 
+        IQueryable<Project> GetAllInEarlyStage();
+
         IQueryable<Project> GetByUserId(string userId);
 
         int SaveChanges();

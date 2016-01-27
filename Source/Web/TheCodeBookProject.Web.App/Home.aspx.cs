@@ -35,7 +35,7 @@
         private IQueryable<Project> GetMostRecentProjects()
         {
             return this.Projects
-                .GetAll()
+                .GetAllInEarlyStage()
                 .OrderByDescending(p => p.DateCreated)
                 .Take(8);
         }

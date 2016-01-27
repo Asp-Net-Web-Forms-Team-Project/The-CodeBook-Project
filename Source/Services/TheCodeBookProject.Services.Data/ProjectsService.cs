@@ -20,6 +20,11 @@
             return this.projects.All();
         }
 
+        public IQueryable<Project> GetAllInEarlyStage()
+        {
+            return this.projects.All().Where(p => p.DevelopersNeeded > p.Developers.Count);
+        }
+
         public IQueryable<Project> GetByUserId(string userId)
         {
             return this.projects.All().Where(p => p.Developers.Any(d => d.Id == userId));
