@@ -17,7 +17,7 @@
         OnDataBound="OnDataBound"
         AllowPaging="true"
         AllowSorting="true"
-        SelectMethod="MostRecentProjectsGridView_GetData"
+        SelectMethod="GetProjectsGridViewData"
         AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
@@ -27,14 +27,14 @@
                 <ItemTemplate>
                     <asp:HyperLink runat="server"
                         CssClass="btn btn-default btn-raised"
-                        NavigateUrl='<%#: "~/Projects/View?ProjectId=" +  Item.Id %>'>Details</asp:HyperLink>
+                        NavigateUrl='<%#: "~/Projects/Details?ProjectId=" +  Item.Id %>'>Details</asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Apply">
                 <ItemTemplate>
                     <asp:HyperLink runat="server"
                         CssClass="btn btn-default btn-raised" 
-                        NavigateUrl='<%# "~/Projects/View?ProjectId=" +  Item.Id + "&Apply=true&devId=" + this.User.Identity.GetUserId() %>'>Apply</asp:HyperLink>
+                        NavigateUrl='<%# "~/Projects/View?ProjectId=" +  Item.Id + "&Apply=true&DeveloperId=" + this.User.Identity.GetUserId() %>'>Apply</asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

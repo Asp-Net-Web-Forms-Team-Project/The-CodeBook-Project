@@ -296,6 +296,10 @@ table {
     font-size: 25px;
 }
 
+.project-developers .panel-heading {
+    font-size: 25px;
+}
+
 input[type=checkbox] {
     transform: scale(2.0) !important;
     -webkit-transform: scale(2.0) !important;

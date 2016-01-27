@@ -223,6 +223,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\default.jpg" />
     <Content Include="Projects\Create.aspx" />
+    <Content Include="Projects\Details.aspx" />
     <Content Include="Projects\UserProjects.aspx" />
     <Content Include="Projects\View.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -477,6 +478,13 @@
     </Compile>
     <Compile Include="Projects\Create.aspx.designer.cs">
       <DependentUpon>Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projects\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Projects\UserProjects.aspx.cs">
       <DependentUpon>UserProjects.aspx</DependentUpon>

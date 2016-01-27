@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Error_Handler_Control {
+namespace ErrorHandlerControl {
     
     
     public partial class ErrorSuccessNotifier {

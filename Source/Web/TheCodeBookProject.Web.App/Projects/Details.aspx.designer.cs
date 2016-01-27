@@ -10,24 +10,33 @@
 namespace TheCodeBookProject.Web.App.Projects {
     
     
-    public partial class View {
+    public partial class Details {
         
         /// <summary>
-        /// ErrorSuccessNotifier control.
+        /// ProjectDetailsView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ErrorHandlerControl.ErrorSuccessNotifier ErrorSuccessNotifier;
+        protected global::System.Web.UI.WebControls.DetailsView ProjectDetailsView;
         
         /// <summary>
-        /// AllProjectsGridView control.
+        /// ProjectDevelopersGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AllProjectsGridView;
+        protected global::System.Web.UI.WebControls.GridView ProjectDevelopersGridView;
+        
+        /// <summary>
+        /// ApplyButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ApplyButton;
     }
 }

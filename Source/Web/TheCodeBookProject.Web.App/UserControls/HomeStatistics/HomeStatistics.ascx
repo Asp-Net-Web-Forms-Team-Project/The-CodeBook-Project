@@ -23,7 +23,7 @@
                 <ItemTemplate>
                     <asp:HyperLink runat="server"
                         CssClass="btn btn-default btn-raised"
-                        NavigateUrl='<%#: "~/Projects/View?ProjectId=" +  Item.Id %>'>Details</asp:HyperLink>
+                        NavigateUrl='<%#: "~/Projects/Details?ProjectId=" +  Item.Id %>'>Details</asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

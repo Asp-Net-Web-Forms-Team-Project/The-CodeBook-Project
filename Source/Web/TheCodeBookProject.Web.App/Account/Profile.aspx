@@ -25,7 +25,7 @@
                             <asp:HyperLink
                                 runat="server"
                                 CssClass="btn btn-default btn-raised"
-                                NavigateUrl='<%#:"~/Projects/View?ProjectId=" + Item.Id%>'>
+                                NavigateUrl='<%#:"~/Projects/Details?ProjectId=" + Item.Id%>'>
                                 Details
                             </asp:HyperLink>
                         </ItemTemplate>

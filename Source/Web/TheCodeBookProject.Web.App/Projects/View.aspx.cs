@@ -2,16 +2,14 @@
 {
     using System;
     using System.Linq;
-    using System.Web.UI.WebControls;
+    using System.Web.UI;
 
-    using Error_Handler_Control;
-
+    using Data.Models;
+    using ErrorHandlerControl;
     using Ninject;
+    using Services.Data.Contracts;
 
-    using TheCodeBookProject.Data.Models;
-    using TheCodeBookProject.Services.Data.Contracts;
-
-    public partial class View : System.Web.UI.Page
+    public partial class View : Page
     {
         [Inject]
         public IProjectsService AllProjects { get; set; }
@@ -25,22 +23,25 @@
         {
             if (this.Request.Params["Apply"] != null)
             {
-                var currentProject = this.AllProjects.GetById(int.Parse(this.Request.Params["ProjectId"]));
-                var firstOrDefault = currentProject.FirstOrDefault();
-                if (firstOrDefault != null && firstOrDefault.ProjectNotifications.Any(x => x.DeveloperId == this.Request.Params["devId"]))
+                Project currentProject = this.AllProjects.GetById(int.Parse(this.Request.Params["ProjectId"]));
+                if (currentProject != null && currentProject.ProjectNotifications.Any(x => x.DeveloperId == this.Request.Params["DeveloperId"]))
                 {
                     ErrorSuccessNotifier.AddErrorMessage("You have already applied for this project.");
+                    ErrorSuccessNotifier.ShowAfterRedirect = true;
                 }
                 else
                 {
-                    this.AllProjects.ApplyById(int.Parse(this.Request.Params["ProjectId"]), this.Request.Params["devId"]);
+                    this.AllProjects.ApplyById(int.Parse(this.Request.Params["ProjectId"]), this.Request.Params["DeveloperId"]);
                     this.AllProjects.SaveChanges();
                     ErrorSuccessNotifier.AddSuccessMessage("Application successful!");
+                    ErrorSuccessNotifier.ShowAfterRedirect = true;
                 }
+
+                this.Response.Redirect("~/Projects/View");
             }
         }
-
-        public IQueryable<Project> MostRecentProjectsGridView_GetData()
+    
+        public IQueryable<Project> GetProjectsGridViewData()
         {
             return this.AllProjects.GetAll().OrderByDescending(pr => pr.DateCreated);
         }
