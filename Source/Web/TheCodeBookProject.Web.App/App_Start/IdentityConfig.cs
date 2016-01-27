@@ -83,6 +83,11 @@ namespace TheCodeBookProject.Web.App
             }
             return manager;
         }
+
+        internal void AddToRole(object registeredUser)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class ApplicationSignInManager : SignInManager<User, string>

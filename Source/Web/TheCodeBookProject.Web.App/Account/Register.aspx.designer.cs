@@ -58,13 +58,103 @@ namespace TheCodeBookProject.Web.App.Account {
         protected global::System.Web.UI.WebControls.TextBox UserName;
         
         /// <summary>
-        /// UserStatus control.
+        /// Calendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList UserStatus;
+        protected global::System.Web.UI.WebControls.TextBox Calendar;
+        
+        /// <summary>
+        /// CalendarExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender;
+        
+        /// <summary>
+        /// UserStatusContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UserStatusContainer;
+        
+        /// <summary>
+        /// UserStatusUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UserStatusUpdatePanel;
+        
+        /// <summary>
+        /// IsDeveloperRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton IsDeveloperRadioButton;
+        
+        /// <summary>
+        /// IsBusinessRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton IsBusinessRadioButton;
+        
+        /// <summary>
+        /// DeveloperBusinessUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel DeveloperBusinessUpdatePanel;
+        
+        /// <summary>
+        /// KnowledgePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel KnowledgePanel;
+        
+        /// <summary>
+        /// DeveloperKnowledgeListBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox DeveloperKnowledgeListBox;
+        
+        /// <summary>
+        /// SkillsPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel SkillsPanel;
+        
+        /// <summary>
+        /// DeveloperSkillsListBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox DeveloperSkillsListBox;
         
         /// <summary>
         /// AboutMe control.

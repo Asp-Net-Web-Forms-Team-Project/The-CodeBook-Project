@@ -9,8 +9,8 @@
         private readonly Random random = new Random();
         private readonly string[] firstNames = { "John", "Pesho", "Gosho", "Stamat", "Mitko", "Vasko", "Lubcho", "Tosho", "Jane", "Jack" };
         private readonly string[] lastNames = { "Jones", "Petrov", "Ivanov", "Georgiev", "Dimitrov", "Smith", "Johnson", "Black", "Silver", "Brunson" };
-        private readonly string[] knowledge = { "C#", "JavaScript", "Java", "Pyhton", "Visual Basic", "PHP", "HTML", "CSS", "Turbo Pascal", "SQL", "jQuery", "AngularJS", "node" };
-        private readonly string[] skills = { "Project Management", "DB Management", "Web Forms", "MEAN", "ASP.NET MVC", "SPA", "Native Mobile Apps Development", "Hybrid Mobile Apps Development", "Windows Universal Apps" };
+        private readonly string[] knowledge = { "C#", "JavaScript", "Java", "Pyhton", "Visual Basic", "PHP", "HTML", "CSS", "Turbo Pascal", "SQL", "jQuery", "AngularJS", "NodeJS" };
+        private readonly string[] skills = { "Project Management", "DB Management", "ASP.NET Web Forms", "MEAN", "ASP.NET MVC", "SPA", "Native Mobile Apps Development", "Hybrid Mobile Apps Development", "Windows Universal Apps" };
         private readonly string[] companyNamesFirstWords = { "Pro", "Soft", "Unlimited", "Net" };
         private readonly string[] companyNamesSecondWords = { "Solutions", "Logic", "Engineering", "Enterprise" };
         private readonly string[] companyTypes = { "Ltd.", "PLC", "Inc." };
