@@ -4,6 +4,7 @@
     using System.Web;
     using System.Web.Optimization;
     using System.Web.Routing;
+    using System.Web.UI;
 
     public class Global : HttpApplication
     {
@@ -12,6 +13,7 @@
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             DatabaseConfig.Initialize();
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.WebForms;
         }
 
         void Application_Error()
