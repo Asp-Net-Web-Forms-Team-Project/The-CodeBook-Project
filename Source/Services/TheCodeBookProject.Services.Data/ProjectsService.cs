@@ -30,6 +30,22 @@
             return this.projects.All().Where(p => p.Developers.Any(d => d.Id == userId));
         }
 
+        public IQueryable<Project> GetById(int id)
+        {
+            return this.projects.All().Where(p => p.Id == id);
+        }
+
+        public void ApplyById(int id, string devId)
+        {
+            var notification = new ProjectNotification
+                                   {
+                                        DeveloperId = devId,
+                                        ProjectId = id
+                                   };
+            var firstOrDefault = this.GetById(id).FirstOrDefault();
+            firstOrDefault?.ProjectNotifications.Add(notification);
+        }
+
         public int SaveChanges()
         {
             return this.projects.SaveChanges();
