@@ -22,7 +22,7 @@
                 <asp:BoundField DataField="UserName" HeaderText="Username" SortExpression="UserName" />
                 <asp:BoundField DataField="FirstName" HeaderText="First name" SortExpression="FirstName" />
                 <asp:BoundField DataField="LastName" HeaderText="Last name" SortExpression="LastName" />
-                <asp:BoundField DataField="Knowledge" HeaderText="Skills" SortExpression="Knowledge" />
+                <asp:BoundField DataField="Knowledge" HeaderText="Knowledge" SortExpression="Knowledge" />
                 <asp:TemplateField HeaderText="Rating" SortExpression="Rating">
                     <ItemTemplate>
                         <codebook:RatingVisualizer runat="server" ID="RatingVisualizer"
