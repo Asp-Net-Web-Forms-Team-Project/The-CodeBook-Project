@@ -3,11 +3,8 @@
     using System;
     using System.Linq;
     using System.Web.UI;
-
-    using Data;
+    
     using Data.Models;
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using Ninject;
     using Services.Data.Contracts;
 
@@ -42,16 +39,11 @@
 
         private IQueryable<User> GetTopRatedDevelopers()
         {
-            var userStore = new UserStore<User>(new TheCodeBookProjectDbContext());
-            var userManager = new UserManager<User>(userStore);
 
             return this.Users
-                .GetAll()
-                .ToList()
-                .Where(u => userManager.IsInRole(u.Id, "developer"))
-                .OrderByDescending(d => Math.Round((double)d.Rating / d.Votes, 1))
-                .Take(8)
-                .AsQueryable();
+                .GetAllUsersInRole("developer")
+                .OrderByDescending(d => Math.Round((double)d.Rating / (d.Votes == 0 ? 1 : d.Votes), 1))
+                .Take(8);
         }
     }
 }

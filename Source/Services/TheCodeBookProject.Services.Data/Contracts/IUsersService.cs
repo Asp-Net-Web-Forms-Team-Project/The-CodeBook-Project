@@ -11,6 +11,8 @@
 
         User GetById(string userId);
 
+        IQueryable<User> GetAllUsersInRole(string roleName);
+
         int SaveChanges();
     }
 }
