@@ -95,9 +95,12 @@ namespace TheCodeBookProject.Data.Migrations
                         {
                             Company company = seedUtils.GetCompany();
                             Project project = seedUtils.GetProject();
+
                             project.Organizer = company;
+                            project.CreatorId = dbUser.Id;
                             company.Projects.Add(project);
                             dbUser.MyCompany = company;
+                            dbUser.Projects.Add(project);
                             project.Developers.Add(devs.Last());
                             userManager.AddToRole(dbUser.Id, businessRoleName);
                         }

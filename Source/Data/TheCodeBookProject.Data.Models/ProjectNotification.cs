@@ -7,9 +7,14 @@
         public int Id { get; set; }
 
         [Required]
-        public string DeveloperId { get; set; }
-        
-        public User Developer { get; set; }
+        public string SenderId { get; set; }
+
+        public User Sender { get; set; }
+
+        [Required]
+        public string ReceiverId { get; set; }
+
+        public User Receiver { get; set; }
 
         [Required]
         public int ProjectId { get; set; }

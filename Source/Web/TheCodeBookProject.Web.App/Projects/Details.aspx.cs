@@ -27,7 +27,7 @@
                 Project project = this.Projects.GetById(projectId);
 
                 string userId = this.User.Identity.GetUserId();
-                bool hasApplied = project.ProjectNotifications.Any(n => n.DeveloperId == userId);
+                bool hasApplied = project.ProjectNotifications.Any(n => n.SenderId == userId);
                 if(hasApplied)
                 {
                     this.ApplyButton.CssClass = "btn btn-primary btn-raised disabled";

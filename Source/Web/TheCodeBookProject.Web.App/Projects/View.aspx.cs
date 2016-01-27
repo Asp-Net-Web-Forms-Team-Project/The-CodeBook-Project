@@ -24,7 +24,7 @@
             if (this.Request.Params["Apply"] != null)
             {
                 Project currentProject = this.AllProjects.GetById(int.Parse(this.Request.Params["ProjectId"]));
-                if (currentProject != null && currentProject.ProjectNotifications.Any(x => x.DeveloperId == this.Request.Params["DeveloperId"]))
+                if (currentProject != null && currentProject.ProjectNotifications.Any(x => x.SenderId == this.Request.Params["DeveloperId"]))
                 {
                     ErrorSuccessNotifier.AddErrorMessage("You have already applied for this project.");
                     ErrorSuccessNotifier.ShowAfterRedirect = true;

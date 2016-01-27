@@ -28,6 +28,9 @@
         [MaxLength(300)]
         public string Description { get; set; }
 
+        [Required]
+        public string CreatorId { get; set; }
+
         public DateTime DateCreated { get; set; }
 
         public int OrganizerId { get; set; }
@@ -35,7 +38,7 @@
         public virtual Company Organizer { get; set; }
 
         public ProjectStatus Status { get; set; }
-        
+
         public int DevelopersNeeded { get; set; }
 
         [Required]

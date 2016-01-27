@@ -12,14 +12,16 @@
 
     public class User : IdentityUser
     {
-        private ICollection<Project> projects;
-        private ICollection<ProjectNotification> projectNotificatons;
+        private ICollection<Project> allProjects;
+        private ICollection<ProjectNotification> invitations;
+        private ICollection<ProjectNotification> applications;
 
         public User()
             : base()
         {
-            this.projects = new HashSet<Project>();
-            this.projectNotificatons = new HashSet<ProjectNotification>();
+            this.allProjects = new HashSet<Project>();
+            this.invitations = new HashSet<ProjectNotification>();
+            this.applications = new HashSet<ProjectNotification>();
         }
 
         public bool IsDeactivated { get; set; }
@@ -55,16 +57,22 @@
         [MaxLength(100)]
         public string ImageUrl { get; set; }
 
-        public virtual ICollection<ProjectNotification> ProjectNotifications
+        public virtual ICollection<ProjectNotification> Invitations
         {
-            get { return this.projectNotificatons; }
-            set { this.projectNotificatons = value; }
+            get { return this.invitations; }
+            set { this.invitations = value; }
+        }
+
+        public virtual ICollection<ProjectNotification> Applications
+        {
+            get { return this.applications; }
+            set { this.applications = value; }
         }
 
         public virtual ICollection<Project> Projects
         {
-            get { return this.projects; }
-            set { this.projects = value; }
+            get { return this.allProjects; }
+            set { this.allProjects = value; }
         }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)

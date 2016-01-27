@@ -64,7 +64,7 @@
                 SkillsRequired = this.GetStringItem(this.skills) + ", " +
                                     this.GetStringItem(this.skills) + ", " +
                                     this.GetStringItem(this.skills),
-                AverageMonetaryAwardPerDeveloper = (decimal)this.random.Next(500, 50000)
+                AverageMonetaryAwardPerDeveloper = this.random.Next(500, 50000)
             };
 
             return project;

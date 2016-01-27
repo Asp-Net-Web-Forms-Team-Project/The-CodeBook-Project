@@ -35,16 +35,23 @@
             return this.projects.All().SingleOrDefault(p => p.Id == id);
         }
 
-        public void ApplyById(int id, string devId)
+        public void ApplyById(int projectId, string senderId)
         {
+            Project dbProject = this.GetById(projectId);
+            if (dbProject == null)
+            {
+                return;
+            }
+
+            string receiverId = dbProject.CreatorId;
             var notification = new ProjectNotification
             {
-                DeveloperId = devId,
-                ProjectId = id
+                SenderId = senderId,
+                ReceiverId = receiverId,
+                ProjectId = projectId
             };
 
-            Project project = this.GetById(id);
-            project?.ProjectNotifications.Add(notification);
+            dbProject.ProjectNotifications.Add(notification);
         }
 
         public void Create(Project project)

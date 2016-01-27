@@ -8,7 +8,7 @@
 
     public class TheCodeBookProjectDbContext : IdentityDbContext<User>, ITheCodeBookProjectDbContext
     {
-        private const string DbConnectionName = "DefaultConnection";
+        private const string DbConnectionName = "TheCodeBookProjectDbConnection";
 
         public TheCodeBookProjectDbContext()
             : base(DbConnectionName, throwIfV1Schema: false)
@@ -30,7 +30,21 @@
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(value: 50);
+            modelBuilder
+                .Entity<User>()
+                .Property(u => u.UserName)
+                .HasMaxLength(value: 50);
+
+            modelBuilder
+                .Entity<ProjectNotification>()
+                .HasRequired(n => n.Sender)
+                .WithMany(u => u.Invitations);
+            modelBuilder
+                .Entity<ProjectNotification>()
+                .HasRequired(n => n.Receiver)
+                .WithMany(u => u.Applications);
+
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
         }
     }

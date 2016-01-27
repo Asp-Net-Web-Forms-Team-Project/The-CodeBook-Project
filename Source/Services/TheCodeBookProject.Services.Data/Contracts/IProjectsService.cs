@@ -13,7 +13,7 @@
 
         Project GetById(int id);
 
-        void ApplyById(int id, string devId);
+        void ApplyById(int projectId, string senderId);
 
         void Create(Project project);
 
