@@ -19,6 +19,8 @@
 
         public bool IsOwner { get; set; }
 
+        public bool IsParticipator { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int projectId = -1;
@@ -38,6 +40,7 @@
                 }
 
                 this.HasDevelopers = project.Developers.Count > 0;
+                this.IsParticipator = project.Developers.Any(d => d.Id == userId);
                 list.Add(project);
 
                 this.ProjectDetailsView.DataSource = list;

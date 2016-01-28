@@ -67,7 +67,7 @@
         </div>
     </div>
     <%
-        if (this.User.IsInRole("developer"))
+        if (this.User.IsInRole("developer") && !this.IsParticipator)
         {
     %>
     <div class="text-center">

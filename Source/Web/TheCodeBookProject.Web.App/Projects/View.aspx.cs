@@ -16,17 +16,20 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
             if (this.Request.Params["Apply"] != null)
             {
+                string devId = this.Request.Params["DeveloperId"];
+
                 Project currentProject = this.AllProjects.GetById(int.Parse(this.Request.Params["ProjectId"]));
-                if (currentProject != null && currentProject.ProjectNotifications.Any(x => x.SenderId == this.Request.Params["DeveloperId"]))
+                if (currentProject != null &&
+                    (currentProject.ProjectNotifications.Any(x => x.SenderId == devId) ||
+                    currentProject.Developers.Any(d => d.Id == devId)))
                 {
-                    ErrorSuccessNotifier.AddErrorMessage("You have already applied for this project.");
+                    ErrorSuccessNotifier.AddErrorMessage("You cannot apply.");
                     ErrorSuccessNotifier.ShowAfterRedirect = true;
                 }
                 else
@@ -40,7 +43,7 @@
                 this.Response.Redirect("~/Projects/View");
             }
         }
-    
+
         public IQueryable<Project> GetProjectsGridViewData()
         {
             return this.AllProjects.GetAll().OrderByDescending(pr => pr.DateCreated);
