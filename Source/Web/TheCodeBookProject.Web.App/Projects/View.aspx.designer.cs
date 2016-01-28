@@ -13,15 +13,6 @@ namespace TheCodeBookProject.Web.App.Projects {
     public partial class View {
         
         /// <summary>
-        /// ErrorSuccessNotifier control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ErrorHandlerControl.ErrorSuccessNotifier ErrorSuccessNotifier;
-        
-        /// <summary>
         /// AllProjectsGridView control.
         /// </summary>
         /// <remarks>

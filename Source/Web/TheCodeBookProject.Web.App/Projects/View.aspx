@@ -1,14 +1,12 @@
-﻿<%@ Page Title="Projects"
+﻿<%@ Page 
+    Title="Projects"
     Language="C#"
     MasterPageFile="~/Site.Master"
     AutoEventWireup="true"
     CodeBehind="View.aspx.cs"
     Inherits="TheCodeBookProject.Web.App.Projects.View" %>
 
-<%@ Register Src="~/UserControls/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx" TagPrefix="codebook" TagName="ErrorSuccessNotifier" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <codebook:ErrorSuccessNotifier runat="server" ID="ErrorSuccessNotifier" />
     <div class="col-md-8 col-md-offset-2">
         <div class="alert alert-primary col-md-12 text-center" style="font-size: 25px; color: white">All projects</div>
         <asp:GridView runat="server" ID="AllProjectsGridView"

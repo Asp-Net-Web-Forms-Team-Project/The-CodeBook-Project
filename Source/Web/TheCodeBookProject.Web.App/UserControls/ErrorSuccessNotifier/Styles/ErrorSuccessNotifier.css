@@ -14,24 +14,28 @@
 }
 
 .PanelSuccess {
+    position: absolute;
 	color: #3F7A10;
 	background-color: #EDFCED;
 	background-image: url('../Images/success-icon.png');
 }
 
 .PanelInfo {
+    position: absolute;
 	color: #3F6AC0;
 	background-color: #EFF8FD;
 	background-image: url('../Images/info-icon.png');
 }
 
 .PanelWarning {
+    position: absolute;
 	color: #8C6211;
 	background-color: #FAF9C9;
 	background-image: url('../Images/warning-icon.png');
 }
 
 .PanelError {
+    position: absolute;
 	color: #B8000C;
 	background-color: #FDE5DE;
 	background-image: url('../Images/error-icon.png');

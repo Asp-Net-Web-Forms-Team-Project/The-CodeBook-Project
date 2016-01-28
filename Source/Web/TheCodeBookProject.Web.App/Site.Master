@@ -86,6 +86,7 @@
                 </div>
             </div>
         </div>
+        <codebook:notifier runat="server" ID="Notifier" />
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
@@ -96,7 +97,7 @@
     </form>
     <footer class="footer text-center">
         <div class="container">
-            <p>&copy; <%: DateTime.Now.Year %> - The CodeBook Project</p>
+            <p>&copy; Telerik Academy <%: DateTime.Now.Year %> - The CodeBook Project</p>
         </div>
     </footer>
     <script>

@@ -6,6 +6,7 @@
 
     using Common.Identity;
     using Microsoft.AspNet.Identity.Owin;
+    using ErrorHandlerControl;
 
     public partial class Login : Page
     {
@@ -39,6 +40,8 @@
                 switch (result)
                 {
                     case SignInStatus.Success:
+                        ErrorSuccessNotifier.AddSuccessMessage("Successful login");
+                        ErrorSuccessNotifier.ShowAfterRedirect = true;
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"] ?? "~/Home", Response);
                         break;
                     case SignInStatus.LockedOut:
@@ -54,6 +57,7 @@
                         break;
                     case SignInStatus.Failure:
                     default:
+                        ErrorSuccessNotifier.AddErrorMessage("Unsuccessful login");
                         FailureText.Text = "Invalid login attempt";
                         ErrorMessage.Visible = true;
                         break;

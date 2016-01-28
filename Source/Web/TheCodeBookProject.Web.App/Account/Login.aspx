@@ -44,7 +44,7 @@
     <div class="col-md-6 text-center">
         <a class="btn btn-primary btn-raised" href="/Account/Register">Register</a>
         <section id="socialLoginForm">
-            <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
+            <uc:openauthproviders runat="server" id="OpenAuthLogin" />
         </section>
     </div>
 </asp:Content>

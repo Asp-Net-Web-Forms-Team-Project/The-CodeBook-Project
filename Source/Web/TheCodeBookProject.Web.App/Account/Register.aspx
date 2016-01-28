@@ -97,7 +97,7 @@
                                     <asp:Panel runat="server" ID="SkillsPanel" Visible="false">
                                         <h5 style="color: #BDBDBD;">What are your skills?</h5>
                                         <asp:ListBox runat="server" ID="DeveloperSkillsListBox"
-                                            SelectionMode="Multiple" AutoPostBack="true">
+                                            SelectionMode="Multiple" >
                                             <asp:ListItem Text="Project Management" Value="Project Management" />
                                             <asp:ListItem Text="Db Management" Value="Db Management" />
                                             <asp:ListItem Text="ASP.NET Web Forms" Value="ASP.NET Web Forms" />

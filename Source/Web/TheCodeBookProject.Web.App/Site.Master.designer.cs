@@ -22,6 +22,15 @@ namespace TheCodeBookProject.Web.App {
         protected global::System.Web.UI.WebControls.Menu NavigationMenu;
         
         /// <summary>
+        /// Notifier control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ErrorHandlerControl.ErrorSuccessNotifier Notifier;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
