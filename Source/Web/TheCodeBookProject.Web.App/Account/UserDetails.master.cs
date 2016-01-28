@@ -16,6 +16,8 @@
 
         public User DbUser { get; set; }
 
+        public bool IsMe { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string userId = this.Request.QueryString["UserId"];
@@ -25,6 +27,8 @@
             }
 
             this.DbUser = this.Users.GetById(userId);
+
+            this.IsMe = this.DbUser.Id == userId;
 
             var list = new ArrayList();
             list.Add(this.DbUser);

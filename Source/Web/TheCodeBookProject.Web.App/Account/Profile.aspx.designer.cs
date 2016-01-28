@@ -47,5 +47,17 @@ namespace TheCodeBookProject.Web.App.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button DeleteUserButton;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new TheCodeBookProject.Web.App.Account.UserDetails Master {
+            get {
+                return ((TheCodeBookProject.Web.App.Account.UserDetails)(base.Master));
+            }
+        }
     }
 }
