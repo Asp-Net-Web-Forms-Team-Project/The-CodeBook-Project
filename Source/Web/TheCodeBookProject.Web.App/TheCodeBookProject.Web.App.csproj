@@ -224,6 +224,7 @@
     <Content Include="Account\UserDetails.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\default.jpg" />
+    <Content Include="Images\fb-login.png" />
     <Content Include="Projects\Create.aspx" />
     <Content Include="Projects\Details.aspx" />
     <Content Include="Projects\UserProjects.aspx" />
