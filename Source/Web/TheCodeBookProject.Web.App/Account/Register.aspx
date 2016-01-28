@@ -6,22 +6,21 @@
     Inherits="TheCodeBookProject.Web.App.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <p class="text-danger">
-        <asp:Literal runat="server" ID="ErrorMessage" />
+    <p class="text-danger hidden">
+        <asp:Literal runat="server"  ID="ErrorMessage" />
     </p>
-
     <div class="row">
         <div class="col-md-6">
             <div class="well bs-component">
                 <fieldset>
                     <legend>Create a new account</legend>
                     <hr />
-                    <asp:ValidationSummary runat="server" CssClass="text-danger" />
+                    <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">First name</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" TextMode="SingleLine" placeholder="First name" required="required" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName"
+                            <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" TextMode="SingleLine" placeholder="First name"  />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName" Display="None"
                                 CssClass="text-danger" ErrorMessage="The first name field is required." />
                         </div>
                         <span class="material-input"></span>
@@ -29,24 +28,24 @@
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="LastName" CssClass="col-md-2 control-label">Last name</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="LastName" CssClass="form-control" TextMode="SingleLine" placeholder="Last name" required="required" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
+                            <asp:TextBox runat="server" ID="LastName" CssClass="form-control" TextMode="SingleLine" placeholder="Last name"  />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName" Display="None"
                                 CssClass="text-danger" ErrorMessage="The last name field is required." />
                         </div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" placeholder="Email" required="required" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                            <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" placeholder="Email"  />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Email" Display="None"
                                 CssClass="text-danger" ErrorMessage="The email field is required." />
                         </div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Username</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="UserName" CssClass="form-control" TextMode="SingleLine" placeholder="Username" required="required" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
+                            <asp:TextBox runat="server" ID="UserName" CssClass="form-control" TextMode="SingleLine" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" Display="None"
                                 CssClass="text-danger" ErrorMessage="The username field is required." />
                         </div>
                     </div>
@@ -117,27 +116,27 @@
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="AboutMe" CssClass="col-md-2 control-label">About Me</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="AboutMe" CssClass="form-control" TextMode="MultiLine" placeholder="About me" required="required" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="AboutMe"
+                            <asp:TextBox runat="server" ID="AboutMe" CssClass="form-control" TextMode="MultiLine" placeholder="About me"  />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="AboutMe" Display="None"
                                 CssClass="text-danger" ErrorMessage="The about me field is required." />
                         </div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" placeholder="Password" required="required" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
+                            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" placeholder="Password"  />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" Display="None"
                                 CssClass="text-danger" ErrorMessage="The password field is required." />
                         </div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" placeholder="Confirm password" required="required" />
+                            <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" placeholder="Confirm password"  />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
+                                CssClass="text-danger" Display="None" ErrorMessage="The confirm password field is required." />
                             <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                                CssClass="text-danger" Display="None" ErrorMessage="The password and confirmation password do not match." />
                         </div>
                     </div>
                     <div class="form-group">

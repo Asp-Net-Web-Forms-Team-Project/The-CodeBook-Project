@@ -15,7 +15,7 @@
             <legend>Log in with your account</legend>
             <hr />
             <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
-                <p class="text-danger">
+                <p class="alert alert-danger">
                     <asp:Literal runat="server" ID="FailureText" />
                 </p>
             </asp:PlaceHolder>
@@ -42,7 +42,7 @@
         </fieldset>
     </div>
     <div class="col-md-6 text-center">
-        <a class="btn btn-primary btn-raised" href="~/Home">Register</a>
+        <a class="btn btn-primary btn-raised" href="/Account/Register">Register</a>
         <section id="socialLoginForm">
             <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
         </section>

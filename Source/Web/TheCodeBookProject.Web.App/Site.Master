@@ -129,6 +129,8 @@
         $('a[title="Find the perfect projects for your dev hunger"]').html('<i class="material-icons md-18">web</i>&nbsp;Projects');
         $('a[title="Find the best developers for your awesome projects"]').html('<i class="material-icons md-18">keyboard</i>&nbsp;Developers');
         $('a[title="Choose what to manage"]').html('<i class="material-icons md-18">vpn_key</i>&nbsp;Admin');
+        $('a[title="Project applications"]').html('<i class="material-icons md-18">event_available</i>&nbsp;Applications');
+        $('a[title="Project invitations"]').html('<i class="material-icons md-18">event_available</i>&nbsp;Invitations');
 
         $('MainContent_UserDetailsView')
             .removeAttr('style')
