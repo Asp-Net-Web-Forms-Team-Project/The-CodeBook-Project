@@ -1,5 +1,5 @@
 ﻿<%@ Page
-    Title="My Profile"
+    Title="Profile"
     Language="C#"
     MasterPageFile="~/Account/UserDetails.Master"
     AutoEventWireup="true"
@@ -7,6 +7,7 @@
     Inherits="TheCodeBookProject.Web.App.Account.Profile" %>
 
 <asp:Content ContentPlaceHolderID="UserDetailsContent" runat="server">
+    <%@ MasterType VirtualPath="~/Account/UserDetails.master" %>
     <div class="panel panel-default user-projects" style="width: 600px; margin-left: auto; margin-right: auto">
         <div class="panel-heading text-center">Projects</div>
         <div class="panel-body">
@@ -43,7 +44,7 @@
             %>
         </div>
     </div>
-    <%if (this.User.IsInRole("admin"))
+    <%if (this.User.IsInRole("admin") && !this.IsMe)
         {
     %>
     <div class="panel panel-warning text-center" style="width: 300px; margin-left: auto; margin-right: auto;">

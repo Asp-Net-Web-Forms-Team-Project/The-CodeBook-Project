@@ -14,12 +14,24 @@
     public partial class Profile : Page
     {
         [Inject]
+        public IUsersService Users { get; set; }
+
+        [Inject]
         public IProjectsService Projects { get; set; }
 
         public bool HasProjects { get; set; }
 
+        public bool IsMe { get; set; }
+
         protected void Page_Load()
         {
+            string userId = this.Request.QueryString["UserId"];
+            if (userId == null)
+            {
+                userId = this.Context.User.Identity.GetUserId();
+            }
+            
+            this.IsMe = this.User.Identity.GetUserId() == userId;
         }
 
         public IQueryable<Project> GetUserProjectsGrid()
