@@ -26,5 +26,7 @@
         void Create(Project project);
 
         int SaveChanges();
+
+        void InviteById(int projectId, string developerId);
     }
 }

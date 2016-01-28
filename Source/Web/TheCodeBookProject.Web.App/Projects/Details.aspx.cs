@@ -17,6 +17,8 @@
 
         public bool HasDevelopers { get; set; }
 
+        public bool IsOwner { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int projectId = -1;
@@ -27,8 +29,9 @@
                 Project project = this.Projects.GetById(projectId);
 
                 string userId = this.User.Identity.GetUserId();
+                this.IsOwner = project.CreatorId == userId;
                 bool hasApplied = project.ProjectNotifications.Any(n => n.SenderId == userId);
-                if(hasApplied)
+                if (hasApplied)
                 {
                     this.ApplyButton.CssClass = "btn btn-primary btn-raised disabled";
                     this.ApplyButton.Enabled = false;
@@ -57,6 +60,13 @@
             string projectId = this.Request.QueryString["ProjectId"];
             string userId = this.User.Identity.GetUserId();
             this.Response.Redirect("~/Projects/View?ProjectId=" + projectId + "&Apply=true&DeveloperId=" + userId);
+        }
+
+        protected void InviteButtonClick(object sender, EventArgs e)
+        {
+            string projectId = this.Request.QueryString["ProjectId"];
+            string userId = this.User.Identity.GetUserId();
+            this.Response.Redirect("~/Developers/View?Invite=true&ProjectId=" + projectId + "&BusinessId=" + userId);
         }
     }
 }

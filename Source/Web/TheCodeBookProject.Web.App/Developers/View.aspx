@@ -9,13 +9,14 @@
 <%@ Register Src="~/UserControls/RatingVisualizer.ascx" TagPrefix="codebook" TagName="RatingVisualizer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="col-md-12 text-center">
-        <div class="alert alert-primary" style="font-size: 25px; color: white">All Developers</div>
+    <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-primary col-md-12 text-center" style="font-size: 25px; color: white">All Developers</div>
         <asp:GridView runat="server" ID="AllDevelopersGridView"
             CssClass="table table-striped table-hover"
             ItemType="TheCodeBookProject.Data.Models.User"
             AllowSorting="true"
             AllowPaging="true"
+            OnDataBound="OnDataBound"
             SelectMethod="AllDevelopersGridView_GetData"
             AutoGenerateColumns="false">
             <Columns>
@@ -35,6 +36,13 @@
                         <asp:HyperLink runat="server"
                             CssClass="btn btn-default btn-raised"
                             NavigateUrl='<%#: "~/Account/Profile?UserId=" +  Item.Id %>'>Details</asp:HyperLink>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Invite">
+                    <ItemTemplate>
+                        <asp:HyperLink runat="server"
+                            CssClass="btn btn-default btn-raised"
+                            NavigateUrl='<%# "~/Developers/View?Invite=true&ProjectId=" + this.Request.QueryString["ProjectId"] + "&BusinessId=" + this.User.Identity.GetUserId() + "&DeveloperId=" + Item.Id %>'>Invite</asp:HyperLink>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

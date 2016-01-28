@@ -75,5 +75,14 @@
     </div>
     <%
         }
+
+        if (this.User.IsInRole("business") && this.IsOwner)
+        {
+    %>
+    <div class="text-center">
+        <asp:Button runat="server" ID="InviteButton" style="color:black!important;font-weight:600" CssClass="btn btn-primary btn-raised" Text="Choose developer to invite" OnClick="InviteButtonClick" />
+    </div>
+    <%
+        }
     %>
 </asp:Content>

@@ -40,30 +40,28 @@
         public IQueryable<ProjectNotification> GetApplicationsSent(string userId)
         {
             return this.GetAll()
-                .SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId != userId && 
-                                                                   n.SenderId ==  userId && 
+                .SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId != userId &&
+                                                                   n.SenderId == userId &&
                                                                    n.Status == ProjectNotificationStatus.Pending));
         }
 
         public IQueryable<ProjectNotification> GetApplicationsReceived(string userId)
         {
             return this.GetByUserId(userId)
-                .SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId == userId && 
-                                                                   n.ReceiverId ==  userId && 
+                .SelectMany(p => p.ProjectNotifications.Where(n => n.ReceiverId == userId &&
                                                                    n.Status == ProjectNotificationStatus.Pending));
         }
-        
+
         public IQueryable<ProjectNotification> GetInvitationsSent(string userId)
         {
-            return this.GetByUserId(userId).SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId == userId && 
-                                                                                              n.SenderId == userId && 
+            return this.GetByUserId(userId).SelectMany(p => p.ProjectNotifications.Where(n => n.SenderId == userId &&
                                                                                               n.Status == ProjectNotificationStatus.Pending));
         }
 
         public IQueryable<ProjectNotification> GetInvitationsReceived(string userId)
         {
-            return this.GetAll().SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId != userId && 
-                                                                                   n.ReceiverId == userId && 
+            return this.GetAll().SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId != userId &&
+                                                                                   n.ReceiverId == userId &&
                                                                                    n.Status == ProjectNotificationStatus.Pending));
         }
 
@@ -79,6 +77,29 @@
 
             User sender = this.users.GetById(senderId);
             User receiver = this.users.GetById(receiverId);
+
+            var notification = new ProjectNotification
+            {
+                Sender = sender,
+                Receiver = receiver,
+                ProjectId = projectId
+            };
+
+            dbProject.ProjectNotifications.Add(notification);
+        }
+
+        public void InviteById(int projectId, string developerId)
+        {
+            Project dbProject = this.GetById(projectId);
+            if (dbProject == null)
+            {
+                return;
+            }
+
+            string senderId = dbProject.CreatorId;
+
+            User sender = this.users.GetById(senderId);
+            User receiver = this.users.GetById(developerId);
 
             var notification = new ProjectNotification
             {
