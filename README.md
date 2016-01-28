@@ -15,7 +15,7 @@
 
 The CodeBook Project is an easy way for businessmen and developers from all over the world to connect to each other. You have a great idea but you need a team to write the code? No problem, the CodeBook Project is here for you. Creating a new business project has never been easier. It is just on a few clicks away from you. Assemble your team of developers based on their skills, filter them according their rating and develop the next world-changing application.
 
-[GitHub](https://github.com/DimitarSD/Teamwork-Porto-Flip)
+[GitHub](https://github.com/Asp-Net-Web-Forms-Team-Project/The-CodeBook-Project)
 
 [Demo](http://the-code-book-project.azurewebsites.net/Home)
 
