@@ -13,7 +13,7 @@
 
         IDbSet<Company> Companies { get; set; }
 
-        IDbSet<ProjectNotification> Applications { get; set; }
+        IDbSet<ProjectNotification> ProjectNotifications { get; set; }
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 

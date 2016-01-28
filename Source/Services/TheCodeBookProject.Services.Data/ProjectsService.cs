@@ -37,6 +37,36 @@
             return this.projects.All().SingleOrDefault(p => p.Id == id);
         }
 
+        public IQueryable<ProjectNotification> GetApplicationsSent(string userId)
+        {
+            return this.GetAll()
+                .SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId != userId && 
+                                                                   n.SenderId ==  userId && 
+                                                                   n.Status == ProjectNotificationStatus.Pending));
+        }
+
+        public IQueryable<ProjectNotification> GetApplicationsReceived(string userId)
+        {
+            return this.GetByUserId(userId)
+                .SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId == userId && 
+                                                                   n.ReceiverId ==  userId && 
+                                                                   n.Status == ProjectNotificationStatus.Pending));
+        }
+        
+        public IQueryable<ProjectNotification> GetInvitationsSent(string userId)
+        {
+            return this.GetByUserId(userId).SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId == userId && 
+                                                                                              n.SenderId == userId && 
+                                                                                              n.Status == ProjectNotificationStatus.Pending));
+        }
+
+        public IQueryable<ProjectNotification> GetInvitationsReceived(string userId)
+        {
+            return this.GetAll().SelectMany(p => p.ProjectNotifications.Where(n => p.CreatorId != userId && 
+                                                                                   n.ReceiverId == userId && 
+                                                                                   n.Status == ProjectNotificationStatus.Pending));
+        }
+
         public void ApplyById(int projectId, string senderId)
         {
             Project dbProject = this.GetById(projectId);

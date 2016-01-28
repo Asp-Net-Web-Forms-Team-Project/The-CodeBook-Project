@@ -342,12 +342,13 @@ input[type=checkbox] {
     border: 1px solid grey;
 }
 
-    th {
-        border-top: 1px solid grey;
-        text-align: center;
-        white-space: nowrap;
-    }
+th {
+    border-top: 1px solid grey;
+    text-align: center;
+    white-space: nowrap;
+}
 
-    td {
-        vertical-align: middle !important;
-    }
+td {
+    vertical-align: middle !important;
+    text-align: center;
+}

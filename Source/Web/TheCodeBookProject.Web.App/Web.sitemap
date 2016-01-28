@@ -6,6 +6,8 @@
       <siteMapNode url="~/Projects/UserProjects.aspx" title="My Projects" description="Track your project experience - current and past projects"/>
     </siteMapNode>
     <siteMapNode url="~/Developers/View.aspx" title="Developers"  description="Find the best developers for your awesome projects" />
+    <siteMapNode url="~/Business/Applications.aspx" title="Applications" description="Project applications"/>
+    <siteMapNode url="~/Business/Invitations.aspx" title="Invitations" description="Project invitations"/>
     <siteMapNode url="~/Contact.aspx" title="Contact" description="Contact us"/>
     <siteMapNode url="~/About.aspx" title="About" description="Who we are"/>
     <siteMapNode url="~/Admin/Tools.aspx" title="Admin" description="Choose what to manage">

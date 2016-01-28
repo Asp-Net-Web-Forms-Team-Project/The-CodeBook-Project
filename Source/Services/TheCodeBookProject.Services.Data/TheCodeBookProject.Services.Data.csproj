@@ -59,8 +59,10 @@
   <ItemGroup>
     <Compile Include="CompaniesService.cs" />
     <Compile Include="Contracts\ICompaniesService.cs" />
+    <Compile Include="Contracts\IProjectNotificationsService.cs" />
     <Compile Include="Contracts\IProjectsService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
+    <Compile Include="ProjectNotificationsService.cs" />
     <Compile Include="ProjectsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersService.cs" />

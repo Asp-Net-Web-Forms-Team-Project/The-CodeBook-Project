@@ -19,7 +19,7 @@
 
         public IDbSet<Project> Projects { get; set; }
 
-        public IDbSet<ProjectNotification> Applications { get; set; }
+        public IDbSet<ProjectNotification> ProjectNotifications { get; set; }
 
         public static TheCodeBookProjectDbContext Create()
         {
