@@ -13,6 +13,10 @@
     public partial class Details : Page
     {
         [Inject]
+        public IUsersService Users { get; set; }
+
+
+        [Inject]
         public IProjectsService Projects { get; set; }
 
         public bool HasDevelopers { get; set; }

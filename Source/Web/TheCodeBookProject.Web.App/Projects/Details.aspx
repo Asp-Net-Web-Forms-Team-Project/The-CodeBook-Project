@@ -10,10 +10,15 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1 class="text-center jumbotron" style="margin-left: auto; margin-right: auto; width: 600px!important">Project details</h1>
-    <asp:DetailsView AutoGenerateRows="false" runat="server" Style="margin-left: auto; margin-right: auto; width: 600px!important" CssClass="table table-striped table-hover" ID="ProjectDetailsView">
+    <asp:DetailsView AutoGenerateRows="false" runat="server" ItemType="TheCodeBookProject.Data.Models.Project" Style="margin-left: auto; margin-right: auto; width: 600px!important" CssClass="table table-striped table-hover" ID="ProjectDetailsView">
         <Fields>
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Name:" DataField="Name" />
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Description:" DataField="Description" />
+            <asp:TemplateField HeaderStyle-Font-Bold="true" HeaderText="Created by:">
+                <ItemTemplate>
+                    <%#: this.Users.GetById(Item.CreatorId).UserName %>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Organizer:" DataField="Organizer.Name" />
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Average reward:" DataField="AverageMonetaryAwardPerDeveloper" DataFormatString="{0:c}" />
             <asp:BoundField HeaderStyle-Font-Bold="true" HeaderText="Developers needed" DataField="DevelopersNeeded" />
