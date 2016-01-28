@@ -9,10 +9,12 @@
     public class ProjectsService : IProjectsService
     {
         private readonly IRepository<Project> projects;
+        private readonly IRepository<User> users;
 
-        public ProjectsService(IRepository<Project> projects)
+        public ProjectsService(IRepository<Project> projects, IRepository<User> users)
         {
             this.projects = projects;
+            this.users = users;
         }
 
         public IQueryable<Project> GetAll()
@@ -44,10 +46,14 @@
             }
 
             string receiverId = dbProject.CreatorId;
+
+            User sender = this.users.GetById(senderId);
+            User receiver = this.users.GetById(receiverId);
+
             var notification = new ProjectNotification
             {
-                SenderId = senderId,
-                ReceiverId = receiverId,
+                Sender = sender,
+                Receiver = receiver,
                 ProjectId = projectId
             };
 
