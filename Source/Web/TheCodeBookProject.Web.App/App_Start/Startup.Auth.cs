@@ -12,7 +12,8 @@ using TheCodeBookProject.Data.Models;
 
 namespace TheCodeBookProject.Web.App
 {
-    public partial class Startup {
+    public partial class Startup
+    {
 
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
         public void ConfigureAuth(IAppBuilder app)
@@ -56,9 +57,9 @@ namespace TheCodeBookProject.Web.App
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+             appId: "205568099793840",
+             appSecret: "aba2b1d9bf36f52025ab0adc92f8c93a");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
