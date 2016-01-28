@@ -38,7 +38,8 @@
                 Description = this.Description.Text,
                 DateCreated = DateTime.UtcNow,
                 AverageMonetaryAwardPerDeveloper = int.Parse(this.Reward.Text),
-                DevelopersNeeded = int.Parse(this.DevsNeeded.Text)
+                DevelopersNeeded = int.Parse(this.DevsNeeded.Text),
+                CreatorId = this.User.Identity.GetUserId()
             };
 
             if (this.UserCompany == null)
